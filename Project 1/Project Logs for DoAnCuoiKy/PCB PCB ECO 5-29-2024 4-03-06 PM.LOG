@@ -1,0 +1,6 @@
+Change Component Comment : Designator=DIODE Zener Old Comment=D1 New Comment=DIODE Zener
+Change Component Designator: OldDesignator=DIODE Zener NewDesignator=D1
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=Q1-2
+Added Net: Name=NetD1_1
+Added Room: Name=NGUYENLY

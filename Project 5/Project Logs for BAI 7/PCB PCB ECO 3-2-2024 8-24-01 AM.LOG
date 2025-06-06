@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=LCD1 Old Footprint=JP16-C1T New Footprint=LCD16X2
+Change Component Comment : Designator=LCD1 Old Comment=LCD 16x2A New Comment=LCD16x2A
+Added Pin To Net: NetName=11 Pin=LCD1-1
+Added Room: Name=NGUYEN LI

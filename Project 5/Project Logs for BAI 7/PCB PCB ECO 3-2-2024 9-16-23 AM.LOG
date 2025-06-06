@@ -1,0 +1,86 @@
+Removed Pin From Net: NetName=22 Pin=DEL-2
+Removed Pin From Net: NetName=22 Pin=DEL-3
+Removed Pin From Net: NetName=22 Pin=EXIT-2
+Removed Pin From Net: NetName=22 Pin=EXIT-3
+Removed Pin From Net: NetName=22 Pin=IC1-26
+Removed Pin From Net: NetName=22 Pin=IC1-27
+Removed Pin From Net: NetName=22 Pin=IC1-28
+Removed Pin From Net: NetName=22 Pin=IC1-29
+Removed Pin From Net: NetName=22 Pin=PRO/OK-2
+Removed Pin From Net: NetName=22 Pin=PRO/OK-3
+Removed Pin From Net: NetName=22 Pin=SET-2
+Removed Pin From Net: NetName=22 Pin=SET-3
+Removed Pin From Net: NetName=22 Pin=SW2-3
+Removed Pin From Net: NetName=22 Pin=SW3-3
+Removed Pin From Net: NetName=22 Pin=SW4-2
+Removed Pin From Net: NetName=22 Pin=SW4-3
+Removed Pin From Net: NetName=22 Pin=SW5-3
+Removed Pin From Net: NetName=22 Pin=SW6-3
+Removed Pin From Net: NetName=22 Pin=SW7-3
+Removed Pin From Net: NetName=22 Pin=SW8-3
+Removed Pin From Net: NetName=22 Pin=SW9-3
+Removed Pin From Net: NetName=22 Pin=SW10-3
+Removed Pin From Net: NetName=22 Pin=SW11-3
+Removed Pin From Net: NetName=22 Pin=SW12-3
+Removed Pin From Net: NetName=22 Pin=SW13-3
+Removed Member From Class: ClassName=NGUYEN LI Member=DEL
+Removed Member From Class: ClassName=NGUYEN LI Member=EXIT
+Removed Member From Class: ClassName=NGUYEN LI Member=PRO/OK
+Removed Member From Class: ClassName=NGUYEN LI Member=SET
+Removed Member From Class: ClassName=NGUYEN LI Member=SW4
+Change Component Footprint: Designator=SW2 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW3 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW5 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW6 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW7 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW8 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW9 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW10 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW11 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW12 Old Footprint=SW2-SMD New Footprint=SW4B
+Change Component Footprint: Designator=SW13 Old Footprint=SW2-SMD New Footprint=SW4B
+Added Component: Designator=SW14(SW4B)
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW15(SW4B)
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW16(SW4B)
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW17(SW4B)
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW(SW4B)
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=22 Pin=SW2-4
+Added Pin To Net: NetName=22 Pin=SW3-4
+Added Pin To Net: NetName=22 Pin=SW5-4
+Added Pin To Net: NetName=22 Pin=SW6-4
+Added Pin To Net: NetName=22 Pin=SW7-4
+Added Pin To Net: NetName=22 Pin=SW8-4
+Added Pin To Net: NetName=22 Pin=SW9-4
+Added Pin To Net: NetName=22 Pin=SW10-4
+Added Pin To Net: NetName=22 Pin=SW11-4
+Added Pin To Net: NetName=22 Pin=SW12-4
+Added Pin To Net: NetName=22 Pin=SW13-4
+Added Pin To Net: NetName=22 Pin=SW14-2
+Added Pin To Net: NetName=22 Pin=SW14-4
+Added Pin To Net: NetName=22 Pin=SW15-2
+Added Pin To Net: NetName=22 Pin=SW15-4
+Added Pin To Net: NetName=22 Pin=SW16-2
+Added Pin To Net: NetName=22 Pin=SW16-4
+Added Pin To Net: NetName=22 Pin=SW17-2
+Added Pin To Net: NetName=22 Pin=SW17-4
+Added Pin To Net: NetName=22 Pin=SW-2
+Added Pin To Net: NetName=22 Pin=SW-4
+Added Pin To Net: NetName=26 Pin=IC1-26
+Added Net: Name=26
+Added Pin To Net: NetName=27 Pin=IC1-27
+Added Net: Name=27
+Added Pin To Net: NetName=28 Pin=IC1-28
+Added Net: Name=28
+Added Pin To Net: NetName=29 Pin=IC1-29
+Added Net: Name=29
+Added Member To Class: ClassName=NGUYEN LI Member=Component SW14 SW
+Added Member To Class: ClassName=NGUYEN LI Member=Component SW15 SW
+Added Member To Class: ClassName=NGUYEN LI Member=Component SW16 SW
+Added Member To Class: ClassName=NGUYEN LI Member=Component SW17 SW
+Added Member To Class: ClassName=NGUYEN LI Member=Component SW
+Added Room: Name=NGUYEN LI

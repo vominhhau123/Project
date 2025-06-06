@@ -1,0 +1,10 @@
+Added Pin To Net: NetName=CB Pin=P5-1
+Added Pin To Net: NetName=COM Pin=P5-2
+Added Pin To Net: NetName=CK Pin=P5-3
+Added Pin To Net: NetName=CB2 Pin=P7-1
+Added Pin To Net: NetName=COM2 Pin=P7-2
+Added Pin To Net: NetName=CK2 Pin=P7-3
+Added Pin To Net: NetName=CB1 Pin=P9-1
+Added Pin To Net: NetName=COM1 Pin=P9-2
+Added Pin To Net: NetName=CK1 Pin=P9-3
+Added Room: Name=NGUYEN LI

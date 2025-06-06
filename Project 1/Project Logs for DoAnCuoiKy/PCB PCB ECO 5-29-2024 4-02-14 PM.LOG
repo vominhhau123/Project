@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=5V Pin=BAT43W-7-F-2
+Change Component Comment : Designator=*? Old Comment=JP New Comment=JP4
+Change Component Designator: OldDesignator=* NewDesignator=JP1
+Change Component Designator: OldDesignator=*? NewDesignator=JP2
+Change Component Designator: OldDesignator=*? NewDesignator=JP3
+Change Component Designator: OldDesignator=*? NewDesignator=JP4
+Added Component: Designator=DIODE Zener(DIO-1A-SMALL)
+Added Pin To Net: NetName=5V Pin=DIODE Zener-2
+Added Pin To Net: NetName=NetDIODE Zener_1 Pin=DIODE Zener-1
+Added Pin To Net: NetName=NetDIODE Zener_1 Pin=Q1-2
+Added Net: Name=NetDIODE Zener_1
+Added Member To Class: ClassName=NGUYENLY Member=Component DIODE Zener D1
+Added Member To Class: ClassName=NGUYENLY Member=Component JP2
+Added Member To Class: ClassName=NGUYENLY Member=Component JP3
+Added Room: Name=NGUYENLY

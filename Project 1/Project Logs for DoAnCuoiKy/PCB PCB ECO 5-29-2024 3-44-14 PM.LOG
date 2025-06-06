@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=GND Pin=Q1-2
+Removed Pin From Net: NetName=NetBAT43W-7-F_1 Pin=Q1-3
+Change Component Footprint: Designator=Q1 Old Footprint=DMG3420U-7 New Footprint=SOT23-123
+Change component parameters: Designator = "Q1" ("Q1"); Footprint = "DMG3420U-7"; UniqueID = "\SDUMSEAY" ("\SDUMSEAY")
+Change component parameters (AddParameter): Name = "Category"; Value = "Transistor-FET"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Parameter 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Status"; Value = "Unreleased"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Transistor Type"; Value = "NPN"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetBAT43W-7-F_1 Pin=Q1-2
+Added Pin To Net: NetName=GND Pin=Q1-3
+Added Member To Class: ClassName=NGUYENLY Member=Component *? JP2
+Added Member To Class: ClassName=NGUYENLY Member=Component *? JP3
+Added Room: Name=NGUYENLY

@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=JP2-1 Pin=P1-1
+Removed Pin From Net: NetName=JP2-2 Pin=P1-2
+Removed Pin From Net: NetName=JP2-3 Pin=P1-3
+Removed Pin From Net: NetName=JP2-4 Pin=P1-4
+Removed Pin From Net: NetName=JP2-5 Pin=P1-5
+Removed Pin From Net: NetName=JP2-6 Pin=P1-6
+Removed Member From Class: ClassName=NGUYEN LI Member=P1
+Added Component: Designator=JP?(JP8)
+Add component (AddParameter): Name = "Value"; Value = "JP7"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=JP2-1 Pin=JP?-1
+Added Pin To Net: NetName=JP2-2 Pin=JP?-2
+Added Pin To Net: NetName=JP2-3 Pin=JP?-3
+Added Pin To Net: NetName=JP2-4 Pin=JP?-4
+Added Pin To Net: NetName=JP2-5 Pin=JP?-5
+Added Pin To Net: NetName=JP2-6 Pin=JP?-6
+Added Member To Class: ClassName=NGUYEN LI Member=Component JP? JP8 PIN
+Added Room: Name=NGUYEN LI

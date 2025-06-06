@@ -1,0 +1,173 @@
+Added Component: Designator=C?(CAPC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "Not Fill"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NF"; VariantName = "[No Variations]"
+Added Component: Designator=C?(CAPC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "Not Fill"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NF"; VariantName = "[No Variations]"
+Added Component: Designator=FAN1(Sunon_Fans_0_MFG)
+Added Component: Designator=J?(JP3)
+Add component (AddParameter): Name = "Value"; Value = "J3"; VariantName = "[No Variations]"
+Added Component: Designator=J?(JP3)
+Add component (AddParameter): Name = "Value"; Value = "J3"; VariantName = "[No Variations]"
+Added Component: Designator=J?(JP3)
+Add component (AddParameter): Name = "Value"; Value = "J3"; VariantName = "[No Variations]"
+Added Component: Designator=J?(JP3)
+Add component (AddParameter): Name = "Value"; Value = "J3"; VariantName = "[No Variations]"
+Added Component: Designator=JP20(JP 20X2)
+Added Component: Designator=MB1(MIKROBUS HOST CONN 8gen TH)
+Added Component: Designator=MB2(MIKROBUS HOST CONN 8gen TH)
+Added Component: Designator=MB3(SAMTEC-HTST-108-01-X-DV)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "SAMTEC-HTST-108-01-X-DV"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Q?(SOT23-123)
+Add component (AddParameter): Name = "Category"; Value = "Transistor-FET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Parameter 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Status"; Value = "Unreleased"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Transistor Type"; Value = "NPN"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "Not Fill"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NF"; VariantName = "[No Variations]"
+Added Component: Designator=R?(DIO-1A-SMALL)
+Added Component: Designator=R?(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "Not Fill"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NF"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "Not Fill"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NF"; VariantName = "[No Variations]"
+Added Component: Designator=R?(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "Not Fill"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NF"; VariantName = "[No Variations]"
+Added Component: Designator=U1(ADS1115IDGSR)
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=3V3 Pin=C?-2
+Added Pin To Net: NetName=GND Pin=J?-1
+Added Pin To Net: NetName=3V3 Pin=J?-3
+Added Pin To Net: NetName=3V3 Pin=JP20-2
+Added Pin To Net: NetName=GND Pin=JP20-5
+Added Pin To Net: NetName=GND Pin=JP20-10
+Added Pin To Net: NetName=GND Pin=JP20-13
+Added Pin To Net: NetName=3V3 Pin=JP20-18
+Added Pin To Net: NetName=GND Pin=JP20-19
+Added Pin To Net: NetName=GND Pin=JP20-26
+Added Pin To Net: NetName=GND Pin=JP20-29
+Added Pin To Net: NetName=GND Pin=JP20-33
+Added Pin To Net: NetName=GND Pin=JP20-40
+Added Pin To Net: NetName=3V3 Pin=MB1-7
+Added Pin To Net: NetName=GND Pin=MB1-8
+Added Pin To Net: NetName=GND Pin=MB1-9
+Added Pin To Net: NetName=GPIO2/I2C-SDA Pin=MB1-11
+Added Pin To Net: NetName=GPIO3/I2C-SCL Pin=MB1-12
+Added Pin To Net: NetName=GPIO11/SPI-SCK Pin=MB1-13
+Added Pin To Net: NetName=GPIO7/CS1 Pin=MB1-14
+Added Pin To Net: NetName=GPIO6 Pin=MB1-15
+Added Pin To Net: NetName=AN2 Pin=MB1-16
+Added Pin To Net: NetName=AN2 Pin=MB2-1
+Added Pin To Net: NetName=GPIO6 Pin=MB2-2
+Added Pin To Net: NetName=GPIO7/CS1 Pin=MB2-3
+Added Pin To Net: NetName=GPIO11/SPI-SCK Pin=MB2-4
+Added Pin To Net: NetName=GPIO3/I2C-SCL Pin=MB2-5
+Added Pin To Net: NetName=GPIO2/I2C-SDA Pin=MB2-6
+Added Pin To Net: NetName=3V3 Pin=MB2-7
+Added Pin To Net: NetName=GND Pin=MB2-8
+Added Pin To Net: NetName=GND Pin=MB2-9
+Added Pin To Net: NetName=3V3 Pin=MB3-13
+Added Pin To Net: NetName=GND Pin=MB3-15
+Added Pin To Net: NetName=GND Pin=MB3-16
+Added Pin To Net: NetName=GND Pin=Q?-3
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=5V Pin=C?-2
+Added Pin To Net: NetName=5V Pin=JP20-1
+Added Pin To Net: NetName=5V Pin=JP20-3
+Added Pin To Net: NetName=5V Pin=MB1-10
+Added Pin To Net: NetName=5V Pin=MB2-10
+Added Pin To Net: NetName=5V Pin=MB3-14
+Added Pin To Net: NetName=5V Pin=R?-2
+Added Net: Name=5V
+Added Pin To Net: NetName=NetFAN1_4 Pin=Q?-2
+Added Pin To Net: NetName=NetFAN1_4 Pin=R?-1
+Added Net: Name=NetFAN1_4
+Added Pin To Net: NetName=NetJ?_1 Pin=J?-1
+Added Pin To Net: NetName=NetJ?_1 Pin=J?-2
+Added Net: Name=NetJ?_1
+Added Pin To Net: NetName=NetJ?_2 Pin=J?-2
+Added Pin To Net: NetName=NetJ?_2 Pin=JP20-21
+Added Net: Name=NetJ?_2
+Added Pin To Net: NetName=NetJP20_4 Pin=JP20-4
+Added Pin To Net: NetName=NetJP20_4 Pin=MB1-2
+Added Net: Name=NetJP20_4
+Added Pin To Net: NetName=NetJP20_8 Pin=JP20-8
+Added Pin To Net: NetName=NetJP20_8 Pin=JP20-12
+Added Net: Name=NetJP20_8
+Added Pin To Net: NetName=NetJP20_11 Pin=JP20-11
+Added Pin To Net: NetName=NetJP20_11 Pin=JP20-15
+Added Net: Name=NetJP20_11
+Added Pin To Net: NetName=NetJP20_14 Pin=JP20-14
+Added Pin To Net: NetName=NetJP20_14 Pin=MB1-3
+Added Net: Name=NetJP20_14
+Added Pin To Net: NetName=NetJP20_16 Pin=JP20-16
+Added Pin To Net: NetName=NetJP20_16 Pin=MB1-4
+Added Net: Name=NetJP20_16
+Added Pin To Net: NetName=NetJP20_20 Pin=JP20-20
+Added Pin To Net: NetName=NetJP20_20 Pin=JP20-22
+Added Net: Name=NetJP20_20
+Added Pin To Net: NetName=NetJP20_23 Pin=JP20-23
+Added Pin To Net: NetName=NetJP20_23 Pin=JP20-25
+Added Net: Name=NetJP20_23
+Added Pin To Net: NetName=NetJP20_24 Pin=JP20-24
+Added Pin To Net: NetName=NetJP20_24 Pin=JP20-30
+Added Net: Name=NetJP20_24
+Added Pin To Net: NetName=NetJP20_31 Pin=JP20-31
+Added Pin To Net: NetName=NetJP20_31 Pin=JP20-35
+Added Net: Name=NetJP20_31
+Added Pin To Net: NetName=NetJP20_32 Pin=JP20-32
+Added Pin To Net: NetName=NetJP20_32 Pin=JP20-34
+Added Net: Name=NetJP20_32
+Added Pin To Net: NetName=NetQ?_1 Pin=Q?-1
+Added Pin To Net: NetName=NetQ?_1 Pin=R?-1
+Added Pin To Net: NetName=NetQ?_1 Pin=R?-1
+Added Net: Name=NetQ?_1
+Added Class: Name=NGUYENLY
+Added Room: Name=NGUYENLY

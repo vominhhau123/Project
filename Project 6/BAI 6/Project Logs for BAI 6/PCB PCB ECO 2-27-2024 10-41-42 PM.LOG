@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=GND Pin=C2-2
+Removed Pin From Net: NetName=VCC Pin=IC1-1
+Removed Pin From Net: NetName=3.3 Pin=IC1-2
+Removed Pin From Net: NetName=GND Pin=IC1-3
+Removed Member From Class: ClassName=NGUYEN LI  Member=IC1
+Added Component: Designator=U?(TO-220)
+Add component (AddParameter): Name = "Contact Email"; Value = "bien-nb@thanglongie.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Creator"; Value = "Nguyen Ba Bien"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC Pin=U?-2
+Added Pin To Net: NetName=3.3 Pin=U?-3
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC2_2 Pin=U?-1
+Added Net: Name=NetC2_2
+Added Member To Class: ClassName=NGUYEN LI  Member=Component U? LM317
+Added Room: Name=NGUYEN LI 

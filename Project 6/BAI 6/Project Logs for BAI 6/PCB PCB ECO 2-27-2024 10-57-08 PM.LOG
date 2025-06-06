@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=SW1 Old Footprint=SW2 New Footprint=BUTTON 2PIN TRON
+Added Member To Class: ClassName=NGUYEN LI  Member=Component U5 Opto Isolator
+Added Room: Name=NGUYEN LI 

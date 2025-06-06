@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=11 Pin=IC1-11
+Removed Pin From Net: NetName=30-32 Pin=IC1-30
+Removed Pin From Net: NetName=11 Pin=IC1-31
+Removed Pin From Net: NetName=30-32 Pin=IC1-32
+Change Component Footprint: Designator=LCD1 Old Footprint=LCD16X2 New Footprint=HDR1X16
+Change Component Comment : Designator=LCD1 Old Comment=LCD16x2A New Comment=LCD16x2
+Change component parameters: Designator = "LCD1" ("LCD1"); Footprint = "LCD16X2"; UniqueID = "\MOCGRGPT" ("\MOCGRGPT")
+Added Component: Designator=LCD(LCD16X2)
+Change Net Name : Old Net Name=11 New Net Name=GND
+Added Pin To Net: NetName=11 Pin=IC1-11
+Added Pin To Net: NetName=11 Pin=IC1-31
+Added Net: Name=11
+Added Member To Class: ClassName=NGUYEN LI Member=Component LCD LCD16x2
+Added Room: Name=NGUYEN LI

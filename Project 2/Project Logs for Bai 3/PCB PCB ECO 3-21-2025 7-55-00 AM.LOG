@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=SCL Pin=COM2-2
+Added Pin To Net: NetName=SDA Pin=COM2-3
+Added Pin To Net: NetName=INT Pin=COM2-7
+Added Pin To Net: NetName=RST Pin=COM2-8
+Added Room: Name=NguyenLi

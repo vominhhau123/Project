@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=RESET Old Footprint=SW4 New Footprint=SW4B
+Change Component Designator: OldDesignator=SW NewDesignator=SW4
+Change component parameters: Designator = "RESET" ("RESET"); Footprint = "SW4"; UniqueID = "\OPFHQCWY" ("\OPFHQCWY")
+Change component parameters (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Room: Name=NGUYEN LI

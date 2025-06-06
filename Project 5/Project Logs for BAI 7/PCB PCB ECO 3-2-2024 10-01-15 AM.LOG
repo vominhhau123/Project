@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=P? NewDesignator=LCD
+Change Component Designator: OldDesignator=P? NewDesignator=LCD1
+Added Member To Class: ClassName=NGUYEN LI Member=Component LCD LCD16x2
+Added Room: Name=NGUYEN LI

@@ -1,0 +1,98 @@
+Removed Pin From Net: NetName=GND Pin=C1-1
+Removed Pin From Net: NetName=VCC_3.3V Pin=C1-2
+Removed Pin From Net: NetName=VCC_3.3V Pin=C2-1
+Removed Pin From Net: NetName=GND Pin=C2-2
+Removed Pin From Net: NetName=VCC_3.3V Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Removed Pin From Net: NetName=VCC_3.3V Pin=C4-1
+Removed Pin From Net: NetName=GND Pin=C4-2
+Removed Pin From Net: NetName=UART_TX0 Pin=P1-6
+Removed Pin From Net: NetName=VCC_3.3V Pin=R1-1
+Removed Pin From Net: NetName=IO0 Pin=R1-2
+Removed Pin From Net: NetName=I2C_SDA Pin=R2-1
+Removed Pin From Net: NetName=VCC_5V Pin=R3-1
+Removed Pin From Net: NetName=I2C_SCL Pin=R3-2
+Removed Pin From Net: NetName=WIFI_EN Pin=R4-2
+Removed Member From Class: ClassName=Sheet1 Member=C3
+Removed Member From Class: ClassName=Sheet1 Member=C4
+Change Component Footprint: Designator=C1 Old Footprint=CAP_TANTAL_1210(3528) New Footprint=CAP_TANTAL_2917(7343-31)
+Change Component Comment : Designator=R3 Old Comment=10K New Comment=4K7
+Change Component Comment : Designator=R4 Old Comment=10K New Comment=4K7
+Change component parameters: Designator = "C1" ("C1"); Footprint = "CAP_TANTAL_1210(3528)"; UniqueID = "\BGVVADUG" ("\BGVVADUG")
+Change component parameters (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CompanyID"; Value = "VT-00022"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MPN"; Value = "TAJD107K016RNJ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "107/16V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3" ("R3"); Footprint = "RESC-0603 (1608)"; UniqueID = "\AODJAHKJ" ("\AODJAHKJ")
+Change component parameters (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CompanyID"; Value = "VT-00327"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MPN"; Value = "RC0603FR-074K7L"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "4K7"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4" ("R4"); Footprint = "RESC-0603 (1608)"; UniqueID = "\TIIQOAKF" ("\TIIQOAKF")
+Change component parameters (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CompanyID"; Value = "VT-00327"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MPN"; Value = "RC0603FR-074K7L"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "4K7"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2" ("C2"); Footprint = "CAPC-0805 (2012)"; UniqueID = "\JEHYVTGF" ("\JEHYVTGF")
+Change component parameters (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CompanyID"; Value = "VT-00292"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MPN"; Value = "0805C225K8PAC7800"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "225/10V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "P2" ("P2"); Footprint = "HDR2X4_CEN"; UniqueID = "\VAYSMRCS" ("\VAYSMRCS")
+Change component parameters (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "WAVE"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C10(CAPC-0805 (2012))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00292"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "0805C225K8PAC7800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "225/10V"; VariantName = "[No Variations]"
+Added Component: Designator=C11(CAP_TANTAL_2917(7343-31))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00022"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "TAJD107K016RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "107/16V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC_3.3V Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=VCC_3.3V Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=VCC_3.3V Pin=C10-2
+Added Pin To Net: NetName=VCC_3.3V Pin=C11-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=I2C_SDA Pin=R1-1
+Added Pin To Net: NetName=VCC_5V Pin=R1-2
+Added Pin To Net: NetName=VCC_3.3V Pin=R3-1
+Change Net Name : Old Net Name=Door1_Sennsor New Net Name=Door1_Sensor
+Change Net Name : Old Net Name=Door2_Sennsor New Net Name=Door2_Sensor
+Change Class Name : Old Net Name=Sheet1 New Net Name=NGUYENLY
+Added Member To Class: ClassName=NGUYENLY Member=Component C10 100nF/0805
+Added Member To Class: ClassName=NGUYENLY Member=Component C11 107/16V
+Added Room: Name=NGUYENLY

@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=5V Pin=-1
+Removed Pin From Net: NetName=11 Pin=VR1-1
+Removed Pin From Net: NetName=5V Pin=VR1-3
+Change Component Footprint: Designator=VR1 Old Footprint=VOL_1 New Footprint=VR1
+Added Pin To Net: NetName=5V Pin=VR1-1
+Added Pin To Net: NetName=11 Pin=VR1-3
+Change Net Name : Old Net Name=5V New Net Name=30-32
+Added Pin To Net: NetName=5V Pin=-1
+Added Net: Name=5V
+Added Room: Name=NGUYEN LI

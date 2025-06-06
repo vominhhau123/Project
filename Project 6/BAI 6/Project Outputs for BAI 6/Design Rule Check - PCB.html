@@ -1,0 +1,824 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">3/1/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2:44:07 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc" class="file"><acronym title="D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc">D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">164</td></tr>
+</table>
+</td>
+</table><a name="IDURPM3ONZAPS0PIFEZRSKQXVZABN0ZFXOD4KMNJ0JNQRY1J33OJO"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM2ZRX3SA5GFLE5H5LOOK1LKKOIAHWKO2ZZL2UULC3KASAOY5Y5JD">Clearance Constraint (Gap=0.5mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUXRWKY5HD55POJVDC3M4PNVMGOXUOZC0WKI03OIYAQ1HMV5ZM2PB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0DWOIPPNHACKDIKLDYGFJEXARI4S1FJOG44H5MHIPGCXUUXOYYQG">Un-Routed Net Constraint ( (Disabled)(All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH4IUZL431RE5DX4Y1SYPBDCHEKYGDBG24ROJYODYN2CBSVNQO5FI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFYJPXYM5D40RDYK13KA4XMELLBEBDYCIFVGOUVC3TJSSQDQ0MONN">Width Constraint (Min=0.5mm) (Max=1mm) (Preferred=0.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSZE5DBVKQX0EJ0N01WEYLXBODG3W2SQOCVLJ24P4C2HUTQJWWTEO">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDDV44ZDQI0TQLZQVRSX30TRDPESKJD3HLVO551PZ4XX5F1C315I">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUCRB1MQPGBKWBWJCTGRNH4RP1NU5210NSBPEKIK1QQPXKSS4Q2SB">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3XRYTQXFOAFFEHIACAZ5RYCZDNMWC5UVL30WTROEGPPNQLU3KFPN">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSY2YIJKXJX10DRROH0AVEKWAQC4PHCBCM21HPGH4MX1MWM0MQAAP">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">161</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVPY343YSVS0POEJ33MFMFTL4MMVO3ETFQ05MILKQCU0MPIICPREN">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDP2NMYSKTW0L0C2CKX4TPYPAPVJ1RTXFJ5QOYHQBNJD4HCNLOC0GH">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFFATSWJATGMNMQZJQLMYIH12KOTAPKFZGXPA10IABH0MORFTZ4C">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">164</td>
+</tr>
+</table><br><a name="IDSY2YIJKXJX10DRROH0AVEKWAQC4PHCBCM21HPGH4MX1MWM0MQAAP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5423.32mil|Location2.X=5435.795mil|Location1.Y=4006.494mil|Location2.Y=4017.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5423.32mil|Location2.X=5435.795mil|Location1.Y=4006.494mil|Location2.Y=4017.744mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.047mm &lt; 0.254mm) Between Arc (107.95mm,75.184mm) on Top Overlay And Pad JP1-2(107.95mm,75.184mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5546.495mil|Location2.X=5557.745mil|Location1.Y=4083.319mil|Location2.Y=4095.847mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5546.495mil|Location2.X=5557.745mil|Location1.Y=4083.319mil|Location2.Y=4095.847mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.047mm &lt; 0.254mm) Between Arc (113.03mm,75.184mm) on Top Overlay And Pad JP1-1(113.03mm,75.184mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1626.167mil|Location2.X=1633.833mil|Location1.Y=3656.91mil|Location2.Y=3664.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1626.167mil|Location2.X=1633.833mil|Location1.Y=3656.91mil|Location2.Y=3664.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (13.471mm,63.505mm) on Top Overlay And Pad LED2-1(13.462mm,64.77mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1716.352mil|Location2.X=1724.019mil|Location1.Y=3528.451mil|Location2.Y=3536.117mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1716.352mil|Location2.X=1724.019mil|Location1.Y=3528.451mil|Location2.Y=3536.117mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (13.471mm,63.505mm) on Top Overlay And Pad LED2-2(13.462mm,62.23mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6537.255mil|Location2.X=6548.505mil|Location1.Y=3527.095mil|Location2.Y=3539.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6537.255mil|Location2.X=6548.505mil|Location1.Y=3527.095mil|Location2.Y=3539.57mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.047mm &lt; 0.254mm) Between Arc (135.763mm,61.087mm) on Top Overlay And Pad JP2-1(135.763mm,61.087mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6441.494mil|Location2.X=6452.744mil|Location1.Y=3669.205mil|Location2.Y=3681.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6441.494mil|Location2.X=6452.744mil|Location1.Y=3669.205mil|Location2.Y=3681.68mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.047mm &lt; 0.254mm) Between Arc (135.763mm,66.167mm) on Top Overlay And Pad JP2-2(135.763mm,66.167mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.644mil|Location2.X=1607.31mil|Location1.Y=2544.38mil|Location2.Y=2552.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.644mil|Location2.X=1607.31mil|Location1.Y=2544.38mil|Location2.Y=2552.047mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (14.503mm,35.371mm) on Top Overlay And Pad Q1-1(11.938mm,35.687mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1836.108mil|Location2.X=1843.774mil|Location1.Y=2541.141mil|Location2.Y=2548.807mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1836.108mil|Location2.X=1843.774mil|Location1.Y=2541.141mil|Location2.Y=2548.807mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (14.503mm,35.371mm) on Top Overlay And Pad Q1-3(17.018mm,35.687mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2349.644mil|Location2.X=2357.31mil|Location1.Y=2554.38mil|Location2.Y=2562.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2349.644mil|Location2.X=2357.31mil|Location1.Y=2554.38mil|Location2.Y=2562.047mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (33.553mm,35.625mm) on Top Overlay And Pad Q2-1(30.988mm,35.941mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2586.108mil|Location2.X=2593.774mil|Location1.Y=2551.141mil|Location2.Y=2558.807mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2586.108mil|Location2.X=2593.774mil|Location1.Y=2551.141mil|Location2.Y=2558.807mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (33.553mm,35.625mm) on Top Overlay And Pad Q2-3(36.068mm,35.941mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2446.167mil|Location2.X=2453.833mil|Location1.Y=3651.91mil|Location2.Y=3659.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2446.167mil|Location2.X=2453.833mil|Location1.Y=3651.91mil|Location2.Y=3659.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (34.299mm,63.378mm) on Top Overlay And Pad LED3-1(34.29mm,64.643mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2536.352mil|Location2.X=2544.019mil|Location1.Y=3523.451mil|Location2.Y=3531.117mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2536.352mil|Location2.X=2544.019mil|Location1.Y=3523.451mil|Location2.Y=3531.117mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (34.299mm,63.378mm) on Top Overlay And Pad LED3-2(34.29mm,62.103mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.167mil|Location2.X=3083.833mil|Location1.Y=3651.91mil|Location2.Y=3659.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.167mil|Location2.X=3083.833mil|Location1.Y=3651.91mil|Location2.Y=3659.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (50.301mm,63.378mm) on Top Overlay And Pad LED4-1(50.292mm,64.643mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3166.352mil|Location2.X=3174.019mil|Location1.Y=3523.451mil|Location2.Y=3531.117mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3166.352mil|Location2.X=3174.019mil|Location1.Y=3523.451mil|Location2.Y=3531.117mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (50.301mm,63.378mm) on Top Overlay And Pad LED4-2(50.292mm,62.103mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3124.644mil|Location2.X=3132.31mil|Location1.Y=2554.38mil|Location2.Y=2562.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3124.644mil|Location2.X=3132.31mil|Location1.Y=2554.38mil|Location2.Y=2562.047mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (53.238mm,35.625mm) on Top Overlay And Pad Q3-1(50.673mm,35.941mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3361.108mil|Location2.X=3368.774mil|Location1.Y=2551.141mil|Location2.Y=2558.807mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3361.108mil|Location2.X=3368.774mil|Location1.Y=2551.141mil|Location2.Y=2558.807mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (53.238mm,35.625mm) on Top Overlay And Pad Q3-3(55.753mm,35.941mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3920.577mil|Location2.X=3931.827mil|Location1.Y=3284.38mil|Location2.Y=3297.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3920.577mil|Location2.X=3931.827mil|Location1.Y=3284.38mil|Location2.Y=3297.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Arc (69.85mm,58.42mm) on Top Overlay And Pad SW1-1(69.85mm,55.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3867.342mil|Location2.X=3878.592mil|Location1.Y=3282.455mil|Location2.Y=3295.942mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3867.342mil|Location2.X=3878.592mil|Location1.Y=3282.455mil|Location2.Y=3295.942mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.159mm &lt; 0.254mm) Between Arc (69.85mm,58.42mm) on Top Overlay And Pad SW1-1(69.85mm,55.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.159mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=3324.696mil|Location2.Y=3335.946mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=3324.696mil|Location2.Y=3335.946mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.24mm &lt; 0.254mm) Between Arc (69.85mm,58.42mm) on Top Overlay And Pad SW1-1(69.85mm,55.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.24mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3921.555mil|Location2.X=3932.805mil|Location1.Y=3501.71mil|Location2.Y=3515.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3921.555mil|Location2.X=3932.805mil|Location1.Y=3501.71mil|Location2.Y=3515.197mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.164mm &lt; 0.254mm) Between Arc (69.85mm,58.42mm) on Top Overlay And Pad SW1-2(69.85mm,60.96mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.164mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3866.271mil|Location2.X=3877.521mil|Location1.Y=3503.249mil|Location2.Y=3516.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3866.271mil|Location2.X=3877.521mil|Location1.Y=3503.249mil|Location2.Y=3516.773mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.197mm &lt; 0.254mm) Between Arc (69.85mm,58.42mm) on Top Overlay And Pad SW1-2(69.85mm,60.96mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=3464.054mil|Location2.Y=3475.304mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=3464.054mil|Location2.Y=3475.304mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.24mm &lt; 0.254mm) Between Arc (69.85mm,58.42mm) on Top Overlay And Pad SW1-2(69.85mm,60.96mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.24mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4921.167mil|Location2.X=4928.833mil|Location1.Y=1631.909mil|Location2.Y=1639.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4921.167mil|Location2.X=4928.833mil|Location1.Y=1631.909mil|Location2.Y=1639.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (97.164mm,12.07mm) on Top Overlay And Pad LED1-1(97.155mm,13.335mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5011.352mil|Location2.X=5019.019mil|Location1.Y=1503.451mil|Location2.Y=1511.117mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5011.352mil|Location2.X=5019.019mil|Location1.Y=1503.451mil|Location2.Y=1511.117mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (97.164mm,12.07mm) on Top Overlay And Pad LED1-2(97.155mm,10.795mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.625mil|Location2.X=4242.875mil|Location1.Y=1290.375mil|Location2.Y=1301.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.625mil|Location2.X=4242.875mil|Location1.Y=1290.375mil|Location2.Y=1301.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.14mm &lt; 0.254mm) Between Pad BT1-1(79.756mm,5.334mm) on Multi-Layer And Track (76.683mm,4.978mm)(78.257mm,4.978mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.14mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4339.125mil|Location2.X=4350.375mil|Location1.Y=1291.375mil|Location2.Y=1302.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4339.125mil|Location2.X=4350.375mil|Location1.Y=1291.375mil|Location2.Y=1302.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad BT1-1(79.756mm,5.334mm) on Multi-Layer And Track (81.356mm,5.004mm)(82.906mm,5.004mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5822.074mil|Location2.X=5833.324mil|Location1.Y=1623.632mil|Location2.Y=1634.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5822.074mil|Location2.X=5833.324mil|Location1.Y=1623.632mil|Location2.Y=1634.882mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.161mm &lt; 0.254mm) Between Pad C1-1(117.983mm,13.716mm) on Multi-Layer And Text "+" (118.821mm,13.843mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.161mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5432.074mil|Location2.X=5443.324mil|Location1.Y=1618.632mil|Location2.Y=1629.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5432.074mil|Location2.X=5443.324mil|Location1.Y=1618.632mil|Location2.Y=1629.882mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.161mm &lt; 0.254mm) Between Pad C2-1(108.077mm,13.589mm) on Multi-Layer And Text "+" (108.915mm,13.716mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.161mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1876.614mil|Location2.X=1887.864mil|Location1.Y=2339.375mil|Location2.Y=2350.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1876.614mil|Location2.X=1887.864mil|Location1.Y=2339.375mil|Location2.Y=2350.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.139mm &lt; 0.254mm) Between Pad D1-1(19.939mm,31.623mm) on Multi-Layer And Track (17.526mm,31.623mm)(18.44mm,31.623mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.139mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533.125mil|Location2.X=1544.375mil|Location1.Y=2339.375mil|Location2.Y=2350.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533.125mil|Location2.X=1544.375mil|Location1.Y=2339.375mil|Location2.Y=2350.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.19mm &lt; 0.254mm) Between Pad D1-2(8.509mm,31.623mm) on Multi-Layer And Track (10.058mm,31.623mm)(10.947mm,31.623mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.19mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2651.614mil|Location2.X=2662.864mil|Location1.Y=2349.375mil|Location2.Y=2360.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2651.614mil|Location2.X=2662.864mil|Location1.Y=2349.375mil|Location2.Y=2360.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.139mm &lt; 0.254mm) Between Pad D2-1(39.624mm,31.877mm) on Multi-Layer And Track (37.211mm,31.877mm)(38.125mm,31.877mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.139mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2308.125mil|Location2.X=2319.375mil|Location1.Y=2349.375mil|Location2.Y=2360.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2308.125mil|Location2.X=2319.375mil|Location1.Y=2349.375mil|Location2.Y=2360.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.19mm &lt; 0.254mm) Between Pad D2-2(28.194mm,31.877mm) on Multi-Layer And Track (29.743mm,31.877mm)(30.632mm,31.877mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.19mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.614mil|Location2.X=3417.864mil|Location1.Y=2304.375mil|Location2.Y=2315.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3406.614mil|Location2.X=3417.864mil|Location1.Y=2304.375mil|Location2.Y=2315.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.139mm &lt; 0.254mm) Between Pad D3-1(58.801mm,30.734mm) on Multi-Layer And Track (56.388mm,30.734mm)(57.302mm,30.734mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.139mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3063.125mil|Location2.X=3074.375mil|Location1.Y=2304.375mil|Location2.Y=2315.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3063.125mil|Location2.X=3074.375mil|Location1.Y=2304.375mil|Location2.Y=2315.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.19mm &lt; 0.254mm) Between Pad D3-2(47.371mm,30.734mm) on Multi-Layer And Track (48.92mm,30.734mm)(49.809mm,30.734mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.19mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6136.167mil|Location2.X=6143.833mil|Location1.Y=1911.167mil|Location2.Y=1918.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6136.167mil|Location2.X=6143.833mil|Location1.Y=1911.167mil|Location2.Y=1918.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad JDC1-1(128.778mm,20.828mm) on Multi-Layer And Track (124.968mm,20.701mm)(133.35mm,20.701mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6396.167mil|Location2.X=6403.833mil|Location1.Y=1772.518mil|Location2.Y=1780.185mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6396.167mil|Location2.X=6403.833mil|Location1.Y=1772.518mil|Location2.Y=1780.185mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad JDC1-3(133.858mm,18.288mm) on Multi-Layer And Track (133.35mm,6.858mm)(133.35mm,20.701mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1703.708mil|Location2.X=1711.374mil|Location1.Y=2199.907mil|Location2.Y=2207.573mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1703.708mil|Location2.X=1711.374mil|Location1.Y=2199.907mil|Location2.Y=2207.573mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K1-1(14.605mm,26.511mm) on Multi-Layer And Track (7.098mm,28.035mm)(22.098mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2016.167mil|Location2.X=2023.833mil|Location1.Y=1523.355mil|Location2.Y=1531.022mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2016.167mil|Location2.X=2023.833mil|Location1.Y=1523.355mil|Location2.Y=1531.022mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K1-2(20.955mm,11.811mm) on Multi-Layer And Track (22.098mm,9.335mm)(22.098mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1425.615mil|Location2.X=1433.281mil|Location1.Y=1551.324mil|Location2.Y=1558.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1425.615mil|Location2.X=1433.281mil|Location1.Y=1551.324mil|Location2.Y=1558.991mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K1-3(8.255mm,11.811mm) on Multi-Layer And Track (7.098mm,9.335mm)(7.098mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2016.167mil|Location2.X=2023.833mil|Location1.Y=2002.095mil|Location2.Y=2009.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2016.167mil|Location2.X=2023.833mil|Location1.Y=2002.095mil|Location2.Y=2009.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K1-4(20.955mm,23.971mm) on Multi-Layer And Track (22.098mm,9.335mm)(22.098mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1425.615mil|Location2.X=1433.281mil|Location1.Y=2030.064mil|Location2.Y=2037.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1425.615mil|Location2.X=1433.281mil|Location1.Y=2030.064mil|Location2.Y=2037.731mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K1-5(8.255mm,23.971mm) on Multi-Layer And Track (7.098mm,9.335mm)(7.098mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2458.708mil|Location2.X=2466.374mil|Location1.Y=2199.907mil|Location2.Y=2207.573mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2458.708mil|Location2.X=2466.374mil|Location1.Y=2199.907mil|Location2.Y=2207.573mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K2-1(33.782mm,26.511mm) on Multi-Layer And Track (26.275mm,28.035mm)(41.275mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.167mil|Location2.X=2778.833mil|Location1.Y=1523.355mil|Location2.Y=1531.022mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.167mil|Location2.X=2778.833mil|Location1.Y=1523.355mil|Location2.Y=1531.022mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K2-2(40.132mm,11.811mm) on Multi-Layer And Track (41.275mm,9.335mm)(41.275mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2180.615mil|Location2.X=2188.281mil|Location1.Y=1551.324mil|Location2.Y=1558.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2180.615mil|Location2.X=2188.281mil|Location1.Y=1551.324mil|Location2.Y=1558.991mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K2-3(27.432mm,11.811mm) on Multi-Layer And Track (26.275mm,9.335mm)(26.275mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.167mil|Location2.X=2778.833mil|Location1.Y=2002.095mil|Location2.Y=2009.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2771.167mil|Location2.X=2778.833mil|Location1.Y=2002.095mil|Location2.Y=2009.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K2-4(40.132mm,23.971mm) on Multi-Layer And Track (41.275mm,9.335mm)(41.275mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2180.615mil|Location2.X=2188.281mil|Location1.Y=2030.064mil|Location2.Y=2037.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2180.615mil|Location2.X=2188.281mil|Location1.Y=2030.064mil|Location2.Y=2037.731mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K2-5(27.432mm,23.971mm) on Multi-Layer And Track (26.275mm,9.335mm)(26.275mm,28.035mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3218.708mil|Location2.X=3226.374mil|Location1.Y=2194.907mil|Location2.Y=2202.573mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3218.708mil|Location2.X=3226.374mil|Location1.Y=2194.907mil|Location2.Y=2202.573mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K3-1(53.086mm,26.384mm) on Multi-Layer And Track (45.579mm,27.908mm)(60.579mm,27.908mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3531.167mil|Location2.X=3538.833mil|Location1.Y=1518.355mil|Location2.Y=1526.022mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3531.167mil|Location2.X=3538.833mil|Location1.Y=1518.355mil|Location2.Y=1526.022mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K3-2(59.436mm,11.684mm) on Multi-Layer And Track (60.579mm,9.208mm)(60.579mm,27.908mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2940.615mil|Location2.X=2948.281mil|Location1.Y=1546.324mil|Location2.Y=1553.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2940.615mil|Location2.X=2948.281mil|Location1.Y=1546.324mil|Location2.Y=1553.991mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K3-3(46.736mm,11.684mm) on Multi-Layer And Track (45.579mm,9.208mm)(45.579mm,27.908mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3531.167mil|Location2.X=3538.833mil|Location1.Y=1997.095mil|Location2.Y=2004.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3531.167mil|Location2.X=3538.833mil|Location1.Y=1997.095mil|Location2.Y=2004.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K3-4(59.436mm,23.844mm) on Multi-Layer And Track (60.579mm,9.208mm)(60.579mm,27.908mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2940.615mil|Location2.X=2948.281mil|Location1.Y=2025.064mil|Location2.Y=2032.731mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2940.615mil|Location2.X=2948.281mil|Location1.Y=2025.064mil|Location2.Y=2032.731mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad K3-5(46.736mm,23.844mm) on Multi-Layer And Track (45.579mm,9.208mm)(45.579mm,27.908mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4942.167mil|Location2.X=4949.833mil|Location1.Y=1587.167mil|Location2.Y=1594.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4942.167mil|Location2.X=4949.833mil|Location1.Y=1587.167mil|Location2.Y=1594.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED1-1(97.155mm,13.335mm) on Multi-Layer And Track (96.418mm,12.471mm)(97.155mm,11.735mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5000.167mil|Location2.X=5007.833mil|Location1.Y=1587.167mil|Location2.Y=1594.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5000.167mil|Location2.X=5007.833mil|Location1.Y=1587.167mil|Location2.Y=1594.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED1-1(97.155mm,13.335mm) on Multi-Layer And Track (97.155mm,11.735mm)(97.892mm,12.471mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4931.819mil|Location2.X=4939.485mil|Location1.Y=1503.247mil|Location2.Y=1510.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4931.819mil|Location2.X=4939.485mil|Location1.Y=1503.247mil|Location2.Y=1510.913mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED1-2(97.155mm,10.795mm) on Multi-Layer And Track (96.156mm,10.34mm)(98.167mm,10.34mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4951.875mil|Location2.X=4963.125mil|Location1.Y=1552.382mil|Location2.Y=1563.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4951.875mil|Location2.X=4963.125mil|Location1.Y=1552.382mil|Location2.Y=1563.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED1-2(97.155mm,10.795mm) on Multi-Layer And Track (96.291mm,11.735mm)(97.968mm,11.735mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4969.375mil|Location2.X=4980.625mil|Location1.Y=1552.382mil|Location2.Y=1563.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4969.375mil|Location2.X=4980.625mil|Location1.Y=1552.382mil|Location2.Y=1563.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED1-2(97.155mm,10.795mm) on Multi-Layer And Track (96.418mm,12.471mm)(97.155mm,11.735mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4969.375mil|Location2.X=4980.625mil|Location1.Y=1552.382mil|Location2.Y=1563.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4969.375mil|Location2.X=4980.625mil|Location1.Y=1552.382mil|Location2.Y=1563.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED1-2(97.155mm,10.795mm) on Multi-Layer And Track (97.155mm,11.735mm)(97.892mm,12.471mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5013.258mil|Location2.X=5024.508mil|Location1.Y=1545.758mil|Location2.Y=1557.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5013.258mil|Location2.X=5024.508mil|Location1.Y=1545.758mil|Location2.Y=1557.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.244mm &lt; 0.254mm) Between Pad LED1-2(97.155mm,10.795mm) on Multi-Layer And Track (98.273mm,11.76mm)(98.704mm,11.328mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.244mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1647.167mil|Location2.X=1654.833mil|Location1.Y=3612.167mil|Location2.Y=3619.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1647.167mil|Location2.X=1654.833mil|Location1.Y=3612.167mil|Location2.Y=3619.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED2-1(13.462mm,64.77mm) on Multi-Layer And Track (12.725mm,63.906mm)(13.462mm,63.17mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.167mil|Location2.X=1712.833mil|Location1.Y=3612.167mil|Location2.Y=3619.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.167mil|Location2.X=1712.833mil|Location1.Y=3612.167mil|Location2.Y=3619.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED2-1(13.462mm,64.77mm) on Multi-Layer And Track (13.462mm,63.17mm)(14.199mm,63.906mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1636.819mil|Location2.X=1644.485mil|Location1.Y=3528.247mil|Location2.Y=3535.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1636.819mil|Location2.X=1644.485mil|Location1.Y=3528.247mil|Location2.Y=3535.913mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED2-2(13.462mm,62.23mm) on Multi-Layer And Track (12.463mm,61.775mm)(14.474mm,61.775mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1656.875mil|Location2.X=1668.125mil|Location1.Y=3577.382mil|Location2.Y=3588.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1656.875mil|Location2.X=1668.125mil|Location1.Y=3577.382mil|Location2.Y=3588.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED2-2(13.462mm,62.23mm) on Multi-Layer And Track (12.598mm,63.17mm)(14.275mm,63.17mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674.375mil|Location2.X=1685.625mil|Location1.Y=3577.382mil|Location2.Y=3588.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674.375mil|Location2.X=1685.625mil|Location1.Y=3577.382mil|Location2.Y=3588.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED2-2(13.462mm,62.23mm) on Multi-Layer And Track (12.725mm,63.906mm)(13.462mm,63.17mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674.375mil|Location2.X=1685.625mil|Location1.Y=3577.382mil|Location2.Y=3588.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674.375mil|Location2.X=1685.625mil|Location1.Y=3577.382mil|Location2.Y=3588.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED2-2(13.462mm,62.23mm) on Multi-Layer And Track (13.462mm,63.17mm)(14.199mm,63.906mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1718.258mil|Location2.X=1729.508mil|Location1.Y=3570.758mil|Location2.Y=3582.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1718.258mil|Location2.X=1729.508mil|Location1.Y=3570.758mil|Location2.Y=3582.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.244mm &lt; 0.254mm) Between Pad LED2-2(13.462mm,62.23mm) on Multi-Layer And Track (14.58mm,63.195mm)(15.011mm,62.763mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.244mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2467.167mil|Location2.X=2474.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2467.167mil|Location2.X=2474.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED3-1(34.29mm,64.643mm) on Multi-Layer And Track (33.553mm,63.779mm)(34.29mm,63.043mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2525.167mil|Location2.X=2532.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2525.167mil|Location2.X=2532.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED3-1(34.29mm,64.643mm) on Multi-Layer And Track (34.29mm,63.043mm)(35.027mm,63.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2456.819mil|Location2.X=2464.485mil|Location1.Y=3523.247mil|Location2.Y=3530.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2456.819mil|Location2.X=2464.485mil|Location1.Y=3523.247mil|Location2.Y=3530.913mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED3-2(34.29mm,62.103mm) on Multi-Layer And Track (33.291mm,61.648mm)(35.302mm,61.648mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2476.875mil|Location2.X=2488.125mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2476.875mil|Location2.X=2488.125mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED3-2(34.29mm,62.103mm) on Multi-Layer And Track (33.426mm,63.043mm)(35.103mm,63.043mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2494.375mil|Location2.X=2505.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2494.375mil|Location2.X=2505.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED3-2(34.29mm,62.103mm) on Multi-Layer And Track (33.553mm,63.779mm)(34.29mm,63.043mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2494.375mil|Location2.X=2505.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2494.375mil|Location2.X=2505.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED3-2(34.29mm,62.103mm) on Multi-Layer And Track (34.29mm,63.043mm)(35.027mm,63.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2538.258mil|Location2.X=2549.508mil|Location1.Y=3565.758mil|Location2.Y=3577.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2538.258mil|Location2.X=2549.508mil|Location1.Y=3565.758mil|Location2.Y=3577.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.244mm &lt; 0.254mm) Between Pad LED3-2(34.29mm,62.103mm) on Multi-Layer And Track (35.408mm,63.068mm)(35.839mm,62.636mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.244mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.167mil|Location2.X=3104.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.167mil|Location2.X=3104.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED4-1(50.292mm,64.643mm) on Multi-Layer And Track (49.555mm,63.779mm)(50.292mm,63.043mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3155.167mil|Location2.X=3162.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3155.167mil|Location2.X=3162.833mil|Location1.Y=3607.167mil|Location2.Y=3614.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED4-1(50.292mm,64.643mm) on Multi-Layer And Track (50.292mm,63.043mm)(51.029mm,63.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3086.819mil|Location2.X=3094.485mil|Location1.Y=3523.247mil|Location2.Y=3530.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3086.819mil|Location2.X=3094.485mil|Location1.Y=3523.247mil|Location2.Y=3530.913mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad LED4-2(50.292mm,62.103mm) on Multi-Layer And Track (49.293mm,61.648mm)(51.304mm,61.648mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3106.875mil|Location2.X=3118.125mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3106.875mil|Location2.X=3118.125mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED4-2(50.292mm,62.103mm) on Multi-Layer And Track (49.428mm,63.043mm)(51.105mm,63.043mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3124.375mil|Location2.X=3135.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3124.375mil|Location2.X=3135.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED4-2(50.292mm,62.103mm) on Multi-Layer And Track (49.555mm,63.779mm)(50.292mm,63.043mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3124.375mil|Location2.X=3135.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3124.375mil|Location2.X=3135.625mil|Location1.Y=3572.382mil|Location2.Y=3583.632mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.254mm) Between Pad LED4-2(50.292mm,62.103mm) on Multi-Layer And Track (50.292mm,63.043mm)(51.029mm,63.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3168.258mil|Location2.X=3179.508mil|Location1.Y=3565.758mil|Location2.Y=3577.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3168.258mil|Location2.X=3179.508mil|Location1.Y=3565.758mil|Location2.Y=3577.008mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.244mm &lt; 0.254mm) Between Pad LED4-2(50.292mm,62.103mm) on Multi-Layer And Track (51.41mm,63.068mm)(51.841mm,62.636mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.244mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1600.829mil|Location2.X=1608.495mil|Location1.Y=2460.931mil|Location2.Y=2468.597mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1600.829mil|Location2.X=1608.495mil|Location1.Y=2460.931mil|Location2.Y=2468.597mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q1-1(11.938mm,35.687mm) on Multi-Layer And Track (11.548mm,34.665mm)(11.989mm,34.036mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1830.742mil|Location2.X=1838.409mil|Location1.Y=2455.317mil|Location2.Y=2462.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1830.742mil|Location2.X=1838.409mil|Location1.Y=2455.317mil|Location2.Y=2462.984mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q1-3(17.018mm,35.687mm) on Multi-Layer And Track (17.145mm,34.036mm)(17.475mm,34.696mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2350.829mil|Location2.X=2358.495mil|Location1.Y=2470.931mil|Location2.Y=2478.597mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2350.829mil|Location2.X=2358.495mil|Location1.Y=2470.931mil|Location2.Y=2478.597mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q2-1(30.988mm,35.941mm) on Multi-Layer And Track (30.598mm,34.919mm)(31.039mm,34.29mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.742mil|Location2.X=2588.409mil|Location1.Y=2465.317mil|Location2.Y=2472.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2580.742mil|Location2.X=2588.409mil|Location1.Y=2465.317mil|Location2.Y=2472.984mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q2-3(36.068mm,35.941mm) on Multi-Layer And Track (36.195mm,34.29mm)(36.525mm,34.95mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.829mil|Location2.X=3133.495mil|Location1.Y=2470.931mil|Location2.Y=2478.597mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.829mil|Location2.X=3133.495mil|Location1.Y=2470.931mil|Location2.Y=2478.597mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q3-1(50.673mm,35.941mm) on Multi-Layer And Track (50.283mm,34.919mm)(50.724mm,34.29mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3355.742mil|Location2.X=3363.409mil|Location1.Y=2465.317mil|Location2.Y=2472.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3355.742mil|Location2.X=3363.409mil|Location1.Y=2465.317mil|Location2.Y=2472.984mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q3-3(55.753mm,35.941mm) on Multi-Layer And Track (55.88mm,34.29mm)(56.21mm,34.95mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.133mil|Location2.X=3110.383mil|Location1.Y=2714.375mil|Location2.Y=2725.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.133mil|Location2.X=3110.383mil|Location1.Y=2714.375mil|Location2.Y=2725.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R10-1(48.641mm,41.148mm) on Multi-Layer And Track (49.86mm,41.148mm)(50.749mm,41.148mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3369.617mil|Location2.X=3380.867mil|Location1.Y=2714.375mil|Location2.Y=2725.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3369.617mil|Location2.X=3380.867mil|Location1.Y=2714.375mil|Location2.Y=2725.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R10-2(57.531mm,41.148mm) on Multi-Layer And Track (55.448mm,41.148mm)(56.312mm,41.148mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6384.375mil|Location2.X=6395.625mil|Location1.Y=2094.133mil|Location2.Y=2105.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6384.375mil|Location2.X=6395.625mil|Location1.Y=2094.133mil|Location2.Y=2105.383mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R1-1(133.096mm,24.384mm) on Multi-Layer And Track (133.096mm,25.603mm)(133.096mm,26.492mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6384.375mil|Location2.X=6395.625mil|Location1.Y=2364.617mil|Location2.Y=2375.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6384.375mil|Location2.X=6395.625mil|Location1.Y=2364.617mil|Location2.Y=2375.867mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R1-2(133.096mm,33.274mm) on Multi-Layer And Track (133.096mm,31.191mm)(133.096mm,32.055mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.133mil|Location2.X=5955.383mil|Location1.Y=3909.375mil|Location2.Y=3920.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.133mil|Location2.X=5955.383mil|Location1.Y=3909.375mil|Location2.Y=3920.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R2-1(120.904mm,71.501mm) on Multi-Layer And Track (122.123mm,71.501mm)(123.012mm,71.501mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6214.617mil|Location2.X=6225.867mil|Location1.Y=3909.375mil|Location2.Y=3920.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6214.617mil|Location2.X=6225.867mil|Location1.Y=3909.375mil|Location2.Y=3920.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R2-2(129.794mm,71.501mm) on Multi-Layer And Track (127.711mm,71.501mm)(128.575mm,71.501mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=2779.133mil|Location2.Y=2790.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=2779.133mil|Location2.Y=2790.383mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R3-1(69.85mm,41.783mm) on Multi-Layer And Track (69.85mm,43.002mm)(69.85mm,43.891mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=3049.617mil|Location2.Y=3060.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.375mil|Location2.X=3905.625mil|Location1.Y=3049.617mil|Location2.Y=3060.867mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R3-2(69.85mm,50.673mm) on Multi-Layer And Track (69.85mm,48.59mm)(69.85mm,49.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5609.617mil|Location2.X=5620.867mil|Location1.Y=1959.375mil|Location2.Y=1970.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5609.617mil|Location2.X=5620.867mil|Location1.Y=1959.375mil|Location2.Y=1970.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R4-1(114.427mm,21.971mm) on Multi-Layer And Track (112.319mm,21.971mm)(113.208mm,21.971mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5339.133mil|Location2.X=5350.383mil|Location1.Y=1959.375mil|Location2.Y=1970.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5339.133mil|Location2.X=5350.383mil|Location1.Y=1959.375mil|Location2.Y=1970.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R4-2(105.537mm,21.971mm) on Multi-Layer And Track (106.756mm,21.971mm)(107.62mm,21.971mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.375mil|Location2.X=1885.625mil|Location1.Y=2884.133mil|Location2.Y=2895.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.375mil|Location2.X=1885.625mil|Location1.Y=2884.133mil|Location2.Y=2895.383mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R5-1(18.542mm,44.45mm) on Multi-Layer And Track (18.542mm,45.669mm)(18.542mm,46.558mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.375mil|Location2.X=1885.625mil|Location1.Y=3154.617mil|Location2.Y=3165.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.375mil|Location2.X=1885.625mil|Location1.Y=3154.617mil|Location2.Y=3165.867mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R5-2(18.542mm,53.34mm) on Multi-Layer And Track (18.542mm,51.257mm)(18.542mm,52.121mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.133mil|Location2.X=1560.383mil|Location1.Y=2699.375mil|Location2.Y=2710.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.133mil|Location2.X=1560.383mil|Location1.Y=2699.375mil|Location2.Y=2710.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R6-1(9.271mm,40.767mm) on Multi-Layer And Track (10.49mm,40.767mm)(11.379mm,40.767mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.617mil|Location2.X=1830.867mil|Location1.Y=2699.375mil|Location2.Y=2710.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.617mil|Location2.X=1830.867mil|Location1.Y=2699.375mil|Location2.Y=2710.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R6-2(18.161mm,40.767mm) on Multi-Layer And Track (16.078mm,40.767mm)(16.942mm,40.767mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2644.375mil|Location2.X=2655.625mil|Location1.Y=2904.133mil|Location2.Y=2915.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2644.375mil|Location2.X=2655.625mil|Location1.Y=2904.133mil|Location2.Y=2915.383mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R7-1(38.1mm,44.958mm) on Multi-Layer And Track (38.1mm,46.177mm)(38.1mm,47.066mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2644.375mil|Location2.X=2655.625mil|Location1.Y=3174.617mil|Location2.Y=3185.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2644.375mil|Location2.X=2655.625mil|Location1.Y=3174.617mil|Location2.Y=3185.867mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R7-2(38.1mm,53.848mm) on Multi-Layer And Track (38.1mm,51.765mm)(38.1mm,52.629mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2324.133mil|Location2.X=2335.383mil|Location1.Y=2709.375mil|Location2.Y=2720.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2324.133mil|Location2.X=2335.383mil|Location1.Y=2709.375mil|Location2.Y=2720.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R8-1(28.956mm,41.021mm) on Multi-Layer And Track (30.175mm,41.021mm)(31.064mm,41.021mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2594.617mil|Location2.X=2605.867mil|Location1.Y=2709.375mil|Location2.Y=2720.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2594.617mil|Location2.X=2605.867mil|Location1.Y=2709.375mil|Location2.Y=2720.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R8-2(37.846mm,41.021mm) on Multi-Layer And Track (35.763mm,41.021mm)(36.627mm,41.021mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3394.375mil|Location2.X=3405.625mil|Location1.Y=2904.133mil|Location2.Y=2915.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3394.375mil|Location2.X=3405.625mil|Location1.Y=2904.133mil|Location2.Y=2915.383mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R9-1(57.15mm,44.958mm) on Multi-Layer And Track (57.15mm,46.177mm)(57.15mm,47.066mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3394.375mil|Location2.X=3405.625mil|Location1.Y=3174.617mil|Location2.Y=3185.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3394.375mil|Location2.X=3405.625mil|Location1.Y=3174.617mil|Location2.Y=3185.867mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.241mm &lt; 0.254mm) Between Pad R9-2(57.15mm,53.848mm) on Multi-Layer And Track (57.15mm,51.765mm)(57.15mm,52.629mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.241mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5109.375mil|Location2.X=5120.625mil|Location1.Y=2498.625mil|Location2.Y=2509.875mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5109.375mil|Location2.X=5120.625mil|Location1.Y=2498.625mil|Location2.Y=2509.875mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.038mm &lt; 0.254mm) Between Pad SD1-1(101.473mm,36.83mm) on Multi-Layer And Track (99.822mm,35.56mm)(102.87mm,35.56mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.038mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5139.375mil|Location2.X=5150.625mil|Location1.Y=2905.135mil|Location2.Y=2916.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5139.375mil|Location2.X=5150.625mil|Location1.Y=2905.135mil|Location2.Y=2916.385mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.038mm &lt; 0.254mm) Between Pad SD1-2(101.473mm,44.831mm) on Multi-Layer And Track (99.822mm,46.101mm)(102.87mm,46.101mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.038mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=3154.375mil|Location2.Y=3165.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=3154.375mil|Location2.Y=3165.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-1(78.613mm,52.959mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2682.375mil|Location2.Y=2693.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2682.375mil|Location2.Y=2693.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-10(92.486mm,40.97mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2760.375mil|Location2.Y=2771.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2760.375mil|Location2.Y=2771.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-11(92.486mm,42.951mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2839.375mil|Location2.Y=2850.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2839.375mil|Location2.Y=2850.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-12(92.486mm,44.958mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2918.375mil|Location2.Y=2929.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2918.375mil|Location2.Y=2929.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-13(92.486mm,46.965mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2997.375mil|Location2.Y=3008.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2997.375mil|Location2.Y=3008.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-14(92.486mm,48.971mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=3075.375mil|Location2.Y=3086.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=3075.375mil|Location2.Y=3086.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-15(92.486mm,50.952mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=3154.375mil|Location2.Y=3165.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=3154.375mil|Location2.Y=3165.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-16(92.486mm,52.959mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=3072.375mil|Location2.Y=3083.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=3072.375mil|Location2.Y=3083.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-2(78.613mm,50.876mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2997.375mil|Location2.Y=3008.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2997.375mil|Location2.Y=3008.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-3(78.613mm,48.971mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2917.375mil|Location2.Y=2928.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2917.375mil|Location2.Y=2928.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-4(78.613mm,46.939mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2840.375mil|Location2.Y=2851.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2840.375mil|Location2.Y=2851.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-5(78.613mm,44.983mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2760.375mil|Location2.Y=2771.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2760.375mil|Location2.Y=2771.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-6(78.613mm,42.951mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2682.375mil|Location2.Y=2693.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2682.375mil|Location2.Y=2693.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-7(78.613mm,40.97mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2602.375mil|Location2.Y=2613.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.401mil|Location2.X=4223.651mil|Location1.Y=2602.375mil|Location2.Y=2613.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad U1-8(78.613mm,38.938mm) on Multi-Layer And Track (77.675mm,36.957mm)(77.675mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2603.375mil|Location2.Y=2614.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.992mil|Location2.X=4824.242mil|Location1.Y=2603.375mil|Location2.Y=2614.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.124mm &lt; 0.254mm) Between Pad U1-9(92.486mm,38.964mm) on Multi-Layer And Track (93.448mm,36.957mm)(93.448mm,57.963mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.124mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-1(115.951mm,53.467mm) on Multi-Layer And Track (114.681mm,44.577mm)(114.681mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-1(115.951mm,53.467mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-1(115.951mm,53.467mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-2(115.951mm,50.927mm) on Multi-Layer And Track (114.681mm,44.577mm)(114.681mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-2(115.951mm,50.927mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-2(115.951mm,50.927mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-3(115.951mm,48.387mm) on Multi-Layer And Track (114.681mm,44.577mm)(114.681mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-3(115.951mm,48.387mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-3(115.951mm,48.387mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5666.683mil|Location2.X=5677.933mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-4(115.951mm,45.847mm) on Multi-Layer And Track (114.681mm,44.577mm)(114.681mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-4(115.951mm,45.847mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5752.067mil|Location2.X=5763.317mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-4(115.951mm,45.847mm) on Multi-Layer And Track (117.221mm,44.577mm)(117.221mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-5(123.571mm,45.847mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-5(123.571mm,45.847mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=2899.375mil|Location2.Y=2910.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-5(123.571mm,45.847mm) on Multi-Layer And Track (124.841mm,44.577mm)(124.841mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-6(123.571mm,48.387mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-6(123.571mm,48.387mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=2999.375mil|Location2.Y=3010.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-6(123.571mm,48.387mm) on Multi-Layer And Track (124.841mm,44.577mm)(124.841mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-7(123.571mm,50.927mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-7(123.571mm,50.927mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=3099.375mil|Location2.Y=3110.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-7(123.571mm,50.927mm) on Multi-Layer And Track (124.841mm,44.577mm)(124.841mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-8(123.571mm,53.467mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5966.683mil|Location2.X=5977.933mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-8(123.571mm,53.467mm) on Multi-Layer And Track (122.301mm,44.577mm)(122.301mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6052.067mil|Location2.X=6063.317mil|Location1.Y=3199.375mil|Location2.Y=3210.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.168mm &lt; 0.254mm) Between Pad U2-8(123.571mm,53.467mm) on Multi-Layer And Track (124.841mm,44.577mm)(124.841mm,54.737mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.168mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1644.621mil|Location2.X=1652.287mil|Location1.Y=3176.167mil|Location2.Y=3183.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1644.621mil|Location2.X=1652.287mil|Location1.Y=3176.167mil|Location2.Y=3183.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U3-1(12.7mm,53.467mm) on Multi-Layer And Track (9.271mm,52.832mm)(13.716mm,52.832mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1544.621mil|Location2.X=1552.287mil|Location1.Y=3176.167mil|Location2.Y=3183.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1544.621mil|Location2.X=1552.287mil|Location1.Y=3176.167mil|Location2.Y=3183.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U3-2(10.16mm,53.467mm) on Multi-Layer And Track (9.271mm,52.832mm)(13.716mm,52.832mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1527.003mil|Location2.X=1534.67mil|Location1.Y=2926.167mil|Location2.Y=2933.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1527.003mil|Location2.X=1534.67mil|Location1.Y=2926.167mil|Location2.Y=2933.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U3-3(10.16mm,45.847mm) on Multi-Layer And Track (9.271mm,46.482mm)(13.716mm,46.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1627.003mil|Location2.X=1634.67mil|Location1.Y=2926.167mil|Location2.Y=2933.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1627.003mil|Location2.X=1634.67mil|Location1.Y=2926.167mil|Location2.Y=2933.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U3-4(12.7mm,45.847mm) on Multi-Layer And Track (9.271mm,46.482mm)(13.716mm,46.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2409.621mil|Location2.X=2417.287mil|Location1.Y=3191.167mil|Location2.Y=3198.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2409.621mil|Location2.X=2417.287mil|Location1.Y=3191.167mil|Location2.Y=3198.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U4-1(32.131mm,53.848mm) on Multi-Layer And Track (28.702mm,53.213mm)(33.147mm,53.213mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2309.621mil|Location2.X=2317.287mil|Location1.Y=3191.167mil|Location2.Y=3198.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2309.621mil|Location2.X=2317.287mil|Location1.Y=3191.167mil|Location2.Y=3198.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U4-2(29.591mm,53.848mm) on Multi-Layer And Track (28.702mm,53.213mm)(33.147mm,53.213mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.003mil|Location2.X=2299.67mil|Location1.Y=2941.167mil|Location2.Y=2948.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2292.003mil|Location2.X=2299.67mil|Location1.Y=2941.167mil|Location2.Y=2948.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U4-3(29.591mm,46.228mm) on Multi-Layer And Track (28.702mm,46.863mm)(33.147mm,46.863mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2392.003mil|Location2.X=2399.67mil|Location1.Y=2941.167mil|Location2.Y=2948.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2392.003mil|Location2.X=2399.67mil|Location1.Y=2941.167mil|Location2.Y=2948.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U4-4(32.131mm,46.228mm) on Multi-Layer And Track (28.702mm,46.863mm)(33.147mm,46.863mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3134.621mil|Location2.X=3142.287mil|Location1.Y=3206.167mil|Location2.Y=3213.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3134.621mil|Location2.X=3142.287mil|Location1.Y=3206.167mil|Location2.Y=3213.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U5-1(50.546mm,54.229mm) on Multi-Layer And Track (47.117mm,53.594mm)(51.562mm,53.594mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3034.621mil|Location2.X=3042.287mil|Location1.Y=3206.167mil|Location2.Y=3213.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3034.621mil|Location2.X=3042.287mil|Location1.Y=3206.167mil|Location2.Y=3213.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U5-2(48.006mm,54.229mm) on Multi-Layer And Track (47.117mm,53.594mm)(51.562mm,53.594mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3017.003mil|Location2.X=3024.67mil|Location1.Y=2956.167mil|Location2.Y=2963.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3017.003mil|Location2.X=3024.67mil|Location1.Y=2956.167mil|Location2.Y=2963.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U5-3(48.006mm,46.609mm) on Multi-Layer And Track (47.117mm,47.244mm)(51.562mm,47.244mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3117.003mil|Location2.X=3124.67mil|Location1.Y=2956.167mil|Location2.Y=2963.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3117.003mil|Location2.X=3124.67mil|Location1.Y=2956.167mil|Location2.Y=2963.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U5-4(50.546mm,46.609mm) on Multi-Layer And Track (47.117mm,47.244mm)(51.562mm,47.244mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4943.586mil|Location2.X=4954.836mil|Location1.Y=2238.376mil|Location2.Y=2249.626mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4943.586mil|Location2.X=4954.836mil|Location1.Y=2238.376mil|Location2.Y=2249.626mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.178mm &lt; 0.254mm) Between Pad X1-1(96.52mm,30.099mm) on Multi-Layer And Track (96.495mm,28.092mm)(96.495mm,28.88mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.178mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4943.617mil|Location2.X=4954.867mil|Location1.Y=2121.375mil|Location2.Y=2132.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4943.617mil|Location2.X=4954.867mil|Location1.Y=2121.375mil|Location2.Y=2132.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.229mm &lt; 0.254mm) Between Pad X1-2(96.52mm,25.019mm) on Multi-Layer And Track (96.495mm,26.289mm)(96.495mm,27.051mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.229mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVPY343YSVS0POEJ33MFMFTL4MMVO3ETFQ05MILKQCU0MPIICPREN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5479.063mil|Location2.X=5490.313mil|Location1.Y=1621.114mil|Location2.Y=1633.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5479.063mil|Location2.X=5490.313mil|Location1.Y=1621.114mil|Location2.Y=1633.859mil|Absolute=True">Silk To Silk Clearance Constraint: (0.17mm &lt; 0.254mm) Between Arc (108.077mm,12.319mm) on Top Overlay And Text "+" (108.915mm,13.716mm) on Top Overlay Silk Text to Silk Clearance [0.17mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5869.063mil|Location2.X=5880.313mil|Location1.Y=1626.114mil|Location2.Y=1638.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5869.063mil|Location2.X=5880.313mil|Location1.Y=1626.114mil|Location2.Y=1638.859mil|Absolute=True">Silk To Silk Clearance Constraint: (0.17mm &lt; 0.254mm) Between Arc (117.983mm,12.446mm) on Top Overlay And Text "+" (118.821mm,13.843mm) on Top Overlay Silk Text to Silk Clearance [0.17mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5080.625mil|Location2.X=5091.875mil|Location1.Y=2538.375mil|Location2.Y=2549.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\THUC HANH CO SO\BAI 6\BAI 6\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5080.625mil|Location2.X=5091.875mil|Location1.Y=2538.375mil|Location2.Y=2549.625mil|Absolute=True">Silk To Silk Clearance Constraint: (0.14mm &lt; 0.254mm) Between Text "1" (100.101mm,36.678mm) on Top Overlay And Track (99.822mm,35.56mm)(99.822mm,46.101mm) on Top Overlay Silk Text to Silk Clearance [0.14mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,7 @@
+Removed Member From Class: ClassName=NGUYEN LI  Member=U?
+Change Component Designator: OldDesignator=U3 NewDesignator=U4
+Change Component Designator: OldDesignator=U4 NewDesignator=U5
+Change Component Designator: OldDesignator=U5 NewDesignator=U6
+Change Component Designator: OldDesignator=U? NewDesignator=U3
+Added Member To Class: ClassName=NGUYEN LI  Member=Component U6 Opto Isolator
+Added Room: Name=NGUYEN LI 

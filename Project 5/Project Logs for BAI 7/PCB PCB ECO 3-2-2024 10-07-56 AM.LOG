@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=GND Pin=LCD1-1
+Removed Pin From Net: NetName=30-32 Pin=LCD1-2
+Removed Pin From Net: NetName=GND Pin=LCD1-3
+Removed Pin From Net: NetName=16 Pin=LCD1-4
+Removed Pin From Net: NetName=GND Pin=LCD1-5
+Removed Pin From Net: NetName=17 Pin=LCD1-6
+Removed Pin From Net: NetName=18 Pin=LCD1-11
+Removed Pin From Net: NetName=19 Pin=LCD1-12
+Removed Pin From Net: NetName=20 Pin=LCD1-13
+Removed Pin From Net: NetName=21 Pin=LCD1-14
+Removed Member From Class: ClassName=NGUYEN LI Member=LCD1
+Added Component: Designator=P?(LCD16X2)
+Added Member To Class: ClassName=NGUYEN LI Member=Component P? LCD16x2
+Added Room: Name=NGUYEN LI

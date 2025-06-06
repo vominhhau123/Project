@@ -1,0 +1,23 @@
+Removed Pin From Net: NetName=CB Pin=P5-1
+Removed Pin From Net: NetName=COM Pin=P5-2
+Removed Pin From Net: NetName=CK Pin=P5-3
+Removed Pin From Net: NetName=GND Pin=P6-2
+Removed Pin From Net: NetName=VCC Pin=P6-3
+Removed Pin From Net: NetName=CB2 Pin=P7-1
+Removed Pin From Net: NetName=COM2 Pin=P7-2
+Removed Pin From Net: NetName=CK2 Pin=P7-3
+Removed Pin From Net: NetName=GND Pin=P8-2
+Removed Pin From Net: NetName=VCC Pin=P8-3
+Removed Pin From Net: NetName=CB1 Pin=P9-1
+Removed Pin From Net: NetName=COM1 Pin=P9-2
+Removed Pin From Net: NetName=CK1 Pin=P9-3
+Removed Pin From Net: NetName=GND Pin=P10-2
+Removed Pin From Net: NetName=VCC Pin=P10-3
+Removed Pin From Net: NetName=OUT Pin=U2-7
+Added Pin To Net: NetName=NetLED2_2 Pin=LED2-2
+Added Pin To Net: NetName=NetLED2_2 Pin=P6-1
+Added Net: Name=NetLED2_2
+Added Pin To Net: NetName=NetLED4_2 Pin=LED4-2
+Added Pin To Net: NetName=NetLED4_2 Pin=P10-1
+Added Net: Name=NetLED4_2
+Added Room: Name=NGUYEN LI

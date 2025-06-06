@@ -1,0 +1,244 @@
+Added Component: Designator=C1(CAP_TANTAL_2917(7343-31))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00022"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "TAJD107K016RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "107/16V"; VariantName = "[No Variations]"
+Added Component: Designator=C2(CAPC-0805 (2012))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00292"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "0805C225K8PAC7800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "225/10V"; VariantName = "[No Variations]"
+Added Component: Designator=C10(CAPC-0805 (2012))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00292"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "0805C225K8PAC7800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "225/10V"; VariantName = "[No Variations]"
+Added Component: Designator=C11(CAP_TANTAL_2917(7343-31))
+Add component (AddParameter): Name = "Category"; Value = "CAPACITOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00022"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "TAJD107K016RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "107/16V"; VariantName = "[No Variations]"
+Added Component: Designator=ESP1(HDR1X16)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=ESP2(HDR1X16)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P1(HDR2X6)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P2(HDR2X4_CEN)
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "WAVE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R1(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00328"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R2(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00328"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "RC0603FR-0710KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00327"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "RC0603FR-074K7L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4K7"; VariantName = "[No Variations]"
+Added Component: Designator=R4(RESC-0603 (1608))
+Add component (AddParameter): Name = "Category"; Value = "RESISTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = "VT-00327"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "RC0603FR-074K7L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "4K7"; VariantName = "[No Variations]"
+Added Component: Designator=SW1(SW 2P SMD)
+Add component (AddParameter): Name = "Link"; Value = "https://ram-e-shop.com/product/press2pin-smd/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "SMD Mini Push Button 2 SMD"; VariantName = "[No Variations]"
+Added Component: Designator=SW2(SW-DIP1)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/4181271609xx.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Baojun Chen"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "Dec.2015"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part No."; Value = "418127160901"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pole"; Value = "01"; VariantName = "[No Variations]"
+Added Component: Designator=U?(ESP32-WROOM-32U)
+Add component (AddParameter): Name = "Category"; Value = "MODULE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = "Espressif"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "ESP32-WROOM-32U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "ESP32-WROOM-32U"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Door1_Sensor Pin=ESP1-12
+Added Pin To Net: NetName=Door1_Sensor Pin=U?-6
+Added Net: Name=Door1_Sensor
+Added Pin To Net: NetName=Door2_Sensor Pin=ESP1-11
+Added Pin To Net: NetName=Door2_Sensor Pin=U?-7
+Added Net: Name=Door2_Sensor
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=GND Pin=ESP1-2
+Added Pin To Net: NetName=GND Pin=ESP2-2
+Added Pin To Net: NetName=GND Pin=ESP2-16
+Added Pin To Net: NetName=GND Pin=P1-8
+Added Pin To Net: NetName=GND Pin=P1-10
+Added Pin To Net: NetName=GND Pin=P1-11
+Added Pin To Net: NetName=GND Pin=P1-12
+Added Pin To Net: NetName=GND Pin=P2-4
+Added Pin To Net: NetName=GND Pin=P2-8
+Added Pin To Net: NetName=GND Pin=SW1-2
+Added Pin To Net: NetName=GND Pin=SW2-2
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=GND Pin=U?-15
+Added Pin To Net: NetName=GND Pin=U?-38
+Added Pin To Net: NetName=GND Pin=U?-39
+Added Net: Name=GND
+Added Pin To Net: NetName=HSPI_CLK Pin=ESP1-5
+Added Pin To Net: NetName=HSPI_CLK Pin=P1-5
+Added Pin To Net: NetName=HSPI_CLK Pin=U?-13
+Added Net: Name=HSPI_CLK
+Added Pin To Net: NetName=HSPI_CS Pin=ESP2-3
+Added Pin To Net: NetName=HSPI_CS Pin=P1-3
+Added Pin To Net: NetName=HSPI_CS Pin=U?-23
+Added Net: Name=HSPI_CS
+Added Pin To Net: NetName=HSPI_MISO Pin=ESP1-4
+Added Pin To Net: NetName=HSPI_MISO Pin=P1-9
+Added Pin To Net: NetName=HSPI_MISO Pin=U?-14
+Added Net: Name=HSPI_MISO
+Added Pin To Net: NetName=HSPI_MOSI Pin=ESP1-3
+Added Pin To Net: NetName=HSPI_MOSI Pin=P1-7
+Added Pin To Net: NetName=HSPI_MOSI Pin=U?-16
+Added Net: Name=HSPI_MOSI
+Added Pin To Net: NetName=I2C_SCL Pin=ESP1-10
+Added Pin To Net: NetName=I2C_SCL Pin=P2-2
+Added Pin To Net: NetName=I2C_SCL Pin=P2-6
+Added Pin To Net: NetName=I2C_SCL Pin=U?-8
+Added Net: Name=I2C_SCL
+Added Pin To Net: NetName=I2C_SDA Pin=ESP1-9
+Added Pin To Net: NetName=I2C_SDA Pin=P2-1
+Added Pin To Net: NetName=I2C_SDA Pin=P2-5
+Added Pin To Net: NetName=I2C_SDA Pin=R1-1
+Added Pin To Net: NetName=I2C_SDA Pin=U?-9
+Added Net: Name=I2C_SDA
+Added Pin To Net: NetName=IO0 Pin=SW2-1
+Added Pin To Net: NetName=IO0 Pin=U?-25
+Added Net: Name=IO0
+Added Pin To Net: NetName=IO16 Pin=ESP2-6
+Added Pin To Net: NetName=IO16 Pin=U?-27
+Added Net: Name=IO16
+Added Pin To Net: NetName=IO17 Pin=ESP2-7
+Added Pin To Net: NetName=IO17 Pin=U?-28
+Added Net: Name=IO17
+Added Pin To Net: NetName=IR_Sensor Pin=ESP1-13
+Added Pin To Net: NetName=IR_Sensor Pin=U?-5
+Added Net: Name=IR_Sensor
+Added Pin To Net: NetName=KeyCard_Input Pin=ESP1-14
+Added Pin To Net: NetName=KeyCard_Input Pin=U?-4
+Added Net: Name=KeyCard_Input
+Added Pin To Net: NetName=LAN_CRS_DV Pin=ESP1-6
+Added Pin To Net: NetName=LAN_CRS_DV Pin=U?-12
+Added Net: Name=LAN_CRS_DV
+Added Pin To Net: NetName=LAN_MDC Pin=ESP2-15
+Added Pin To Net: NetName=LAN_MDC Pin=U?-37
+Added Net: Name=LAN_MDC
+Added Pin To Net: NetName=LAN_MDIO Pin=ESP2-9
+Added Pin To Net: NetName=LAN_MDIO Pin=U?-30
+Added Net: Name=LAN_MDIO
+Added Pin To Net: NetName=LAN_RXD0 Pin=ESP1-8
+Added Pin To Net: NetName=LAN_RXD0 Pin=U?-10
+Added Net: Name=LAN_RXD0
+Added Pin To Net: NetName=LAN_RXD1 Pin=ESP1-7
+Added Pin To Net: NetName=LAN_RXD1 Pin=U?-11
+Added Net: Name=LAN_RXD1
+Added Pin To Net: NetName=LAN_TX_EN Pin=ESP2-11
+Added Pin To Net: NetName=LAN_TX_EN Pin=U?-33
+Added Net: Name=LAN_TX_EN
+Added Pin To Net: NetName=LAN_TXD0 Pin=ESP2-10
+Added Pin To Net: NetName=LAN_TXD0 Pin=U?-31
+Added Net: Name=LAN_TXD0
+Added Pin To Net: NetName=LAN_TXD1 Pin=ESP2-14
+Added Pin To Net: NetName=LAN_TXD1 Pin=U?-36
+Added Net: Name=LAN_TXD1
+Added Pin To Net: NetName=LED_IND Pin=ESP2-5
+Added Pin To Net: NetName=LED_IND Pin=U?-26
+Added Net: Name=LED_IND
+Added Pin To Net: NetName=UART_RX0 Pin=ESP2-12
+Added Pin To Net: NetName=UART_RX0 Pin=P1-4
+Added Pin To Net: NetName=UART_RX0 Pin=U?-34
+Added Net: Name=UART_RX0
+Added Pin To Net: NetName=UART_RX Pin=ESP2-8
+Added Pin To Net: NetName=UART_RX Pin=U?-29
+Added Net: Name=UART_RX
+Added Pin To Net: NetName=UART_TX0 Pin=ESP2-13
+Added Pin To Net: NetName=UART_TX0 Pin=U?-35
+Added Net: Name=UART_TX0
+Added Pin To Net: NetName=UART_TX Pin=ESP2-4
+Added Pin To Net: NetName=UART_TX Pin=U?-24
+Added Net: Name=UART_TX
+Added Pin To Net: NetName=VCC_3.3V Pin=C1-1
+Added Pin To Net: NetName=VCC_3.3V Pin=C2-2
+Added Pin To Net: NetName=VCC_3.3V Pin=C10-2
+Added Pin To Net: NetName=VCC_3.3V Pin=C11-1
+Added Pin To Net: NetName=VCC_3.3V Pin=ESP1-1
+Added Pin To Net: NetName=VCC_3.3V Pin=R3-1
+Added Pin To Net: NetName=VCC_3.3V Pin=R4-1
+Added Pin To Net: NetName=VCC_3.3V Pin=U?-2
+Added Net: Name=VCC_3.3V
+Added Pin To Net: NetName=VCC_5V Pin=ESP1-16
+Added Pin To Net: NetName=VCC_5V Pin=P1-1
+Added Pin To Net: NetName=VCC_5V Pin=P1-2
+Added Pin To Net: NetName=VCC_5V Pin=P2-3
+Added Pin To Net: NetName=VCC_5V Pin=P2-7
+Added Pin To Net: NetName=VCC_5V Pin=R1-2
+Added Pin To Net: NetName=VCC_5V Pin=R2-2
+Added Net: Name=VCC_5V
+Added Pin To Net: NetName=WIFI_EN Pin=ESP1-15
+Added Pin To Net: NetName=WIFI_EN Pin=SW1-1
+Added Pin To Net: NetName=WIFI_EN Pin=U?-3
+Added Net: Name=WIFI_EN
+Added Class: Name=NGUYENLY
+Added Room: Name=NGUYENLY

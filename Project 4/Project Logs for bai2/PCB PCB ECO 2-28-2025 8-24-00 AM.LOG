@@ -1,0 +1,206 @@
+Added Component: Designator=C1(JP6-D2T)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/6130xx21821.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Karrer Zheng"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "29 March 2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "W¨¹rth Elektronik eiSos GmbH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NoPins"; Value = "12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "partNo"; Value = "61301221821"; VariantName = "[No Variations]"
+Added Component: Designator=C2(SM-0805)
+Add component (AddParameter): Name = "Value"; Value = "103"; VariantName = "[No Variations]"
+Added Component: Designator=C3(SM-0805)
+Add component (AddParameter): Name = "Value"; Value = "103"; VariantName = "[No Variations]"
+Added Component: Designator=C4(SM-0805)
+Add component (AddParameter): Name = "Value"; Value = "103"; VariantName = "[No Variations]"
+Added Component: Designator=C5(SM-0805)
+Add component (AddParameter): Name = "Value"; Value = "103"; VariantName = "[No Variations]"
+Added Component: Designator=ESP1(HDR1X16)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=ESP2(HDR1X16)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P1(HDR2X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R1(RES-SMD-0603)
+Add component (AddParameter): Name = "Class"; Value = "Passive"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "08/06/2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Hobart Technology Centre"; VariantName = "[No Variations]"
+Added Component: Designator=R2(RES-SMD-0603)
+Add component (AddParameter): Name = "Class"; Value = "Passive"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "08/06/2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Hobart Technology Centre"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RES-SMD-0603)
+Add component (AddParameter): Name = "Class"; Value = "Passive"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "08/06/2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Hobart Technology Centre"; VariantName = "[No Variations]"
+Added Component: Designator=R4(RES-SMD-0603)
+Add component (AddParameter): Name = "Class"; Value = "Passive"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "08/06/2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Hobart Technology Centre"; VariantName = "[No Variations]"
+Added Component: Designator=S1(SW-DIP1)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/4181271609xx.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Baojun Chen"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "Dec.2015"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part No."; Value = "418127160901"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pole"; Value = "01"; VariantName = "[No Variations]"
+Added Component: Designator=SW1(SW2)
+Add component (AddParameter): Name = "Value"; Value = "SW chip 2 pin"; VariantName = "[No Variations]"
+Added Component: Designator=U1(ESP32-WROOM-32U)
+Add component (AddParameter): Name = "Category"; Value = "MODULE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = "Espressif"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "ESP32-WROOM-32U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "ESP32-WROOM-32U"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Door1 sensor Pin=ESP1-12
+Added Pin To Net: NetName=Door1 sensor Pin=U1-6
+Added Net: Name=Door1 sensor
+Added Pin To Net: NetName=Door2 sensor Pin=ESP1-11
+Added Pin To Net: NetName=Door2 sensor Pin=U1-7
+Added Net: Name=Door2 sensor
+Added Pin To Net: NetName=GND Pin=C1-6
+Added Pin To Net: NetName=GND Pin=C1-7
+Added Pin To Net: NetName=GND Pin=C1-8
+Added Pin To Net: NetName=GND Pin=C1-9
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=GND Pin=ESP1-2
+Added Pin To Net: NetName=GND Pin=ESP2-2
+Added Pin To Net: NetName=GND Pin=ESP2-16
+Added Pin To Net: NetName=GND Pin=P1-7
+Added Pin To Net: NetName=GND Pin=P1-8
+Added Pin To Net: NetName=GND Pin=S1-1
+Added Pin To Net: NetName=GND Pin=SW1-2
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-15
+Added Pin To Net: NetName=GND Pin=U1-38
+Added Pin To Net: NetName=GND Pin=U1-39
+Added Net: Name=GND
+Added Pin To Net: NetName=HSPI CLK Pin=C1-3
+Added Pin To Net: NetName=HSPI CLK Pin=ESP1-5
+Added Pin To Net: NetName=HSPI CLK Pin=U1-13
+Added Net: Name=HSPI CLK
+Added Pin To Net: NetName=HSPI CS Pin=C1-2
+Added Pin To Net: NetName=HSPI CS Pin=ESP2-3
+Added Pin To Net: NetName=HSPI CS Pin=U1-23
+Added Net: Name=HSPI CS
+Added Pin To Net: NetName=HSPI MISO Pin=C1-5
+Added Pin To Net: NetName=HSPI MISO Pin=ESP1-4
+Added Pin To Net: NetName=HSPI MISO Pin=U1-14
+Added Net: Name=HSPI MISO
+Added Pin To Net: NetName=HSPI MOSI Pin=C1-4
+Added Pin To Net: NetName=HSPI MOSI Pin=ESP1-3
+Added Pin To Net: NetName=HSPI MOSI Pin=U1-16
+Added Net: Name=HSPI MOSI
+Added Pin To Net: NetName=I2C SCL Pin=ESP1-10
+Added Pin To Net: NetName=I2C SCL Pin=P1-3
+Added Pin To Net: NetName=I2C SCL Pin=P1-4
+Added Pin To Net: NetName=I2C SCL Pin=R2-2
+Added Pin To Net: NetName=I2C SCL Pin=U1-8
+Added Net: Name=I2C SCL
+Added Pin To Net: NetName=I2C SDA Pin=ESP1-9
+Added Pin To Net: NetName=I2C SDA Pin=P1-1
+Added Pin To Net: NetName=I2C SDA Pin=P1-2
+Added Pin To Net: NetName=I2C SDA Pin=R1-2
+Added Pin To Net: NetName=I2C SDA Pin=U1-9
+Added Net: Name=I2C SDA
+Added Pin To Net: NetName=IO0 Pin=R3-2
+Added Pin To Net: NetName=IO0 Pin=S1-2
+Added Pin To Net: NetName=IO0 Pin=U1-25
+Added Net: Name=IO0
+Added Pin To Net: NetName=IO16 Pin=ESP2-6
+Added Pin To Net: NetName=IO16 Pin=U1-27
+Added Net: Name=IO16
+Added Pin To Net: NetName=IO17 Pin=ESP2-7
+Added Pin To Net: NetName=IO17 Pin=U1-28
+Added Net: Name=IO17
+Added Pin To Net: NetName=IR Sensor Pin=ESP1-13
+Added Pin To Net: NetName=IR Sensor Pin=U1-5
+Added Net: Name=IR Sensor
+Added Pin To Net: NetName=keycard input Pin=ESP1-14
+Added Pin To Net: NetName=keycard input Pin=U1-4
+Added Net: Name=keycard input
+Added Pin To Net: NetName=LAN CRS DV Pin=ESP1-6
+Added Pin To Net: NetName=LAN CRS DV Pin=U1-12
+Added Net: Name=LAN CRS DV
+Added Pin To Net: NetName=LAN MDC Pin=ESP2-15
+Added Pin To Net: NetName=LAN MDC Pin=U1-37
+Added Net: Name=LAN MDC
+Added Pin To Net: NetName=LAN MDIO Pin=ESP2-9
+Added Pin To Net: NetName=LAN MDIO Pin=U1-30
+Added Net: Name=LAN MDIO
+Added Pin To Net: NetName=LAN RXD0 Pin=ESP1-8
+Added Pin To Net: NetName=LAN RXD0 Pin=U1-10
+Added Net: Name=LAN RXD0
+Added Pin To Net: NetName=LAN RXD1 Pin=ESP1-7
+Added Pin To Net: NetName=LAN RXD1 Pin=U1-11
+Added Net: Name=LAN RXD1
+Added Pin To Net: NetName=LAN TXD0 Pin=ESP2-10
+Added Pin To Net: NetName=LAN TXD0 Pin=U1-31
+Added Net: Name=LAN TXD0
+Added Pin To Net: NetName=LAN TXD1 Pin=ESP2-14
+Added Pin To Net: NetName=LAN TXD1 Pin=U1-36
+Added Net: Name=LAN TXD1
+Added Pin To Net: NetName=LAN TX EN Pin=ESP2-11
+Added Pin To Net: NetName=LAN TX EN Pin=U1-33
+Added Net: Name=LAN TX EN
+Added Pin To Net: NetName=LED IND Pin=ESP2-5
+Added Pin To Net: NetName=LED IND Pin=U1-26
+Added Net: Name=LED IND
+Added Pin To Net: NetName=UART RX0 Pin=C1-11
+Added Pin To Net: NetName=UART RX0 Pin=ESP2-12
+Added Pin To Net: NetName=UART RX0 Pin=U1-34
+Added Net: Name=UART RX0
+Added Pin To Net: NetName=UART RX Pin=ESP2-8
+Added Pin To Net: NetName=UART RX Pin=U1-29
+Added Net: Name=UART RX
+Added Pin To Net: NetName=UART TX0 Pin=C1-10
+Added Pin To Net: NetName=UART TX0 Pin=ESP2-13
+Added Pin To Net: NetName=UART TX0 Pin=U1-35
+Added Net: Name=UART TX0
+Added Pin To Net: NetName=UART TX Pin=ESP2-4
+Added Pin To Net: NetName=UART TX Pin=U1-24
+Added Net: Name=UART TX
+Added Pin To Net: NetName=VCC 3.3V Pin=C2-1
+Added Pin To Net: NetName=VCC 3.3V Pin=C3-2
+Added Pin To Net: NetName=VCC 3.3V Pin=C4-2
+Added Pin To Net: NetName=VCC 3.3V Pin=C5-2
+Added Pin To Net: NetName=VCC 3.3V Pin=ESP1-1
+Added Pin To Net: NetName=VCC 3.3V Pin=R3-1
+Added Pin To Net: NetName=VCC 3.3V Pin=R4-1
+Added Pin To Net: NetName=VCC 3.3V Pin=U1-2
+Added Net: Name=VCC 3.3V
+Added Pin To Net: NetName=VCC 5V Pin=C1-1
+Added Pin To Net: NetName=VCC 5V Pin=C1-12
+Added Pin To Net: NetName=VCC 5V Pin=ESP1-16
+Added Pin To Net: NetName=VCC 5V Pin=P1-5
+Added Pin To Net: NetName=VCC 5V Pin=P1-6
+Added Pin To Net: NetName=VCC 5V Pin=R1-1
+Added Pin To Net: NetName=VCC 5V Pin=R2-1
+Added Net: Name=VCC 5V
+Added Pin To Net: NetName=WIFI EN Pin=ESP1-15
+Added Pin To Net: NetName=WIFI EN Pin=R4-2
+Added Pin To Net: NetName=WIFI EN Pin=SW1-1
+Added Pin To Net: NetName=WIFI EN Pin=U1-3
+Added Net: Name=WIFI EN
+Added Class: Name=NGUYENLY
+Added Room: Name=NGUYENLY

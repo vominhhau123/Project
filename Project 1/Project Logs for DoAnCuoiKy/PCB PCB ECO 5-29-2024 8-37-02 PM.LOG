@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=AN3 Pin=MB3-1
+Removed Pin From Net: NetName=GPIO4 Pin=MB3-2
+Removed Pin From Net: NetName=GPIO2/I2C-SDA Pin=MB3-3
+Removed Pin From Net: NetName=GPIO7/CS1 Pin=MB3-4
+Removed Pin From Net: NetName=AN2 Pin=MB3-5
+Removed Pin From Net: NetName=GPIO7/CS1 Pin=MB3-6
+Removed Pin From Net: NetName=GPIO2/I2C-SDA Pin=MB3-7
+Removed Pin From Net: NetName=GPIO2/I2C-SDA Pin=MB3-8
+Removed Pin From Net: NetName=GPIO2/I2C-SDA Pin=MB3-9
+Change Component Footprint: Designator=MB3 Old Footprint=SAMTEC-HTST-108-01-X-DV New Footprint=SAMTEC_SHF-108-01-L-D-SM
+Change Component Comment : Designator=MB3 Old Comment=SAMTEC-HTST-108-01-X-DV New Comment=SHF-108-01-L-D-SM
+Change component parameters: Designator = "MB3" ("MB3"); Footprint = "SAMTEC-HTST-108-01-X-DV"; UniqueID = "\REHQDLDJ" ("\REHQDLDJ")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SHF-108-01-L-D-SM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=AN3 Pin=MB3-01
+Added Pin To Net: NetName=GPIO4 Pin=MB3-02
+Added Pin To Net: NetName=GPIO2/I2C-SDA Pin=MB3-03
+Added Pin To Net: NetName=GPIO7/CS1 Pin=MB3-04
+Added Pin To Net: NetName=AN2 Pin=MB3-05
+Added Pin To Net: NetName=GPIO7/CS1 Pin=MB3-06
+Added Pin To Net: NetName=GPIO2/I2C-SDA Pin=MB3-07
+Added Pin To Net: NetName=GPIO2/I2C-SDA Pin=MB3-08
+Added Pin To Net: NetName=GPIO2/I2C-SDA Pin=MB3-09
+Added Room: Name=NGUYENLY

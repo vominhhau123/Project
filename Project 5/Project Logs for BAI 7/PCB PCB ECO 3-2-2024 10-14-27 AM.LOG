@@ -1,0 +1,12 @@
+Change Component Designator: OldDesignator=P? NewDesignator=LCD
+Added Pin To Net: NetName=GND Pin=LCD-1
+Added Pin To Net: NetName=30-32 Pin=LCD-2
+Added Pin To Net: NetName=GND Pin=LCD-3
+Added Pin To Net: NetName=16 Pin=LCD-4
+Added Pin To Net: NetName=GND Pin=LCD-5
+Added Pin To Net: NetName=17 Pin=LCD-6
+Added Pin To Net: NetName=18 Pin=LCD-11
+Added Pin To Net: NetName=19 Pin=LCD-12
+Added Pin To Net: NetName=20 Pin=LCD-13
+Added Pin To Net: NetName=21 Pin=LCD-14
+Added Room: Name=NGUYEN LI

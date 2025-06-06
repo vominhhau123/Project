@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=SW14 NewDesignator=EXIT
+Change Component Designator: OldDesignator=SW15 NewDesignator=DEL
+Change Component Designator: OldDesignator=SW16 NewDesignator=SET
+Change Component Designator: OldDesignator=SW17 NewDesignator=PRO/OK
+Added Room: Name=NGUYEN LI
