@@ -80,40 +80,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KBDGTPAC
 
-[Document3]
-DocumentPath=..\..\Thiết kế linh kiện\Thietkelinhkien\HAU.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=FNHRUIYK
-
-[Document4]
-DocumentPath=..\..\Thiết kế linh kiện\Thietkelinhkien\ATmega32.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=PSSBMHNW
-
 [GeneratedDocument1]
 DocumentPath=Project Outputs for BAI 7\Design Rule Check - PCB.html
 DItemRevisionGUID=
